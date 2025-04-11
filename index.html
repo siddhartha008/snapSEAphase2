@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LA TV Shows | Home</title>
-    <meta name="description" content="A Catalog of Shows Set in Los Angeles" />
+    <title>Furever Home</title> 
+    
+    <!-- cute dog favicon -->
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon" />  
+    
+    <meta name="description" content="Helping dogs find their forever homes." />
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="scripts.js"></script>
   </head>
 
   <body>
     <header class="main-header">
-      <h1 class="title">LA TV Shows</h1>
+      <h1 class="title">Furever Homes</h1>
     </header>
-    <div id="card-container"></div>
-    <div class="card" style="display: none">
-      <div class="card-content">
-        <h2>TV Show Title</h2>
-        <img src="" alt="TV Show Poster" />
-        <ul>
-          <li>Bullet Point 1</li>
-          <li>Bullet Point 2</li>
-          <li>Bullet Point 3</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer">
-      <button onclick="quoteAlert();">Get A Quote!</button>
-      <button onclick="removeLastCard();">Remove A Card!</button>
+
+    <nav class="main-nav">
+        <a href="index.html">Adopt Me</a>
+        <a href="index.html">Adopted</a>
+        <a href="index.html">Pet Me</a>
+    </nav>
+    <div class="page-heading">
+      <h2>Dogs for Adoption</h2>
+  </div>
+    <div id="dogCard">
+     <!--card elements generated from script.js (displayDogs())--> 
     </div>
   </body>
+  
+  <footer>
+    <div>
+      <p>&copy; 2025 Furever Homes. All rights reserved.</p>
+    </div>
+  </footer>
 </html>
