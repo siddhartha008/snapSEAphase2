@@ -2,20 +2,61 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #fae8e0;
+  background-color: #F5F7F1;
 }
 
 .main-header {
-  background-color: #d8a7b1;
+  background-color: #946b45;
   padding-bottom: 10px;
 }
 
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 1em;
+  border-bottom: 1px solid #ccc;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+.nav-left button,
+.nav-right button {
+  margin: 0 0.5em;
+}
+
+.sort-dropdown, .breed-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.sort-menu, .breed-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+  background-color: #ffedd9;
+  border: 1px solid #ccc;
+  padding: 2em;
+  border-radius: 5px;
+  min-width: 120px;
+  z-index: 10;
+}
+
+.sort-dropdown.active .sort-menu,
+.breed-dropdown.active .breed-menu {
+  display: flex;
+}
+
 .title {
-  margin:0;
+  margin: 0;
   text-align: center;
   font-family: "Verdana";
   font-weight: normal;
-  color: white;
+  color: black;
 }
 
 #dogCard {
@@ -25,16 +66,25 @@ body {
 }
 
 .dogCard {
-  width: 300px;
+  background-color:#ffedd9 ;
+  width: 20%;
   padding: 1em; //adding some spaces inside the card
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 5px;
+  margin: 15px;
+  
   
 }
 
+.dogCard img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
 .card-content {
+  
   padding: 20px;
   font-family: "Verdana";
   color: #777;
@@ -45,16 +95,23 @@ body {
   font-size: 20px;
 }
 
-.card img {
-  width: 100%;
-  height: auto;
+.sort-dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-.footer {
-  display: flex;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.3);
+.sort-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  background-color: #ffedd9;
+  border: 1px solid #ccc;
   padding: 10px;
+  border-radius: 5px;
+}
+
+.hidden {
+  display: none;
 }
 
 button {
@@ -69,4 +126,16 @@ button {
   font-size: 1.2em;
   cursor: pointer;
   margin: 5px;
+}
+
+button:hover { 
+  background: #d1477a;
+}
+
+
+footer {
+  display: flex;
+  justify-content: center;
+
+  background-color: #946b45;
 }

@@ -8,6 +8,7 @@
     
     <meta name="description" content="Helping dogs find their forever homes." />
     <link rel="stylesheet" href="style.css" />
+    <script src="./dataset.js"></script>
     <script type="text/javascript" src="scripts.js"></script>
   </head>
 
@@ -17,12 +18,40 @@
     </header>
 
     <nav class="main-nav">
-        <a href="index.html">Adopt Me</a>
-        <a href="index.html">Adopted</a>
-        <a href="index.html">Pet Me</a>
+      <div class="nav-left">
+        <button class="up-for-adoption" onclick="displayUpForAdotionDogs()">Up for Adoption</button>
+        <button class="adopted-button" onclick="displayAdoptedDogs()">Adopted</button>
+        <button>Pet the Dog ~ Virtually</button>
+      </div>
+      <div class="sort-dropdown nav-right" onclick="this.classList.toggle('active')">
+        <button>
+          Sort▼
+        </button>
+        <div class="sort-menu">
+          <button onclick="sortByYoungest()">Youngest</button>
+          <button onclick="sortByOldest()">Senior</button>
+          <button onclick="sortByWeight()">By Weight</button>
+        </div>
+      </div>
+
+      <div class="breed-dropdown">
+        <button>
+          Breeds
+        </button>
+        <div class="breed-menu">
+          <button onclick="displayTheBreed('Boxer')">Boxer</button>
+          <button onclick="displayTheBreed('Golden Retriever')">Golden</button>
+          <button onclick="displayTheBreed('Husky')">Husky</button>
+          <button onclick="displayTheBreed('Japanese Spitz')">Japanese Spitz</button>
+          <button onclick="displayTheBreed('Labrador')">Lab</button>
+          <button onclick="displayTheBreed('Poodle')">Poodle</button>
+          <button onclick="displayTheBreed('Pug')">Pug</button>
+        </div>
+      </div>
+      
     </nav>
-    <div class="page-heading">
-      <h2>Dogs for Adoption</h2>
+    <div>
+      <h2 class="page-heading-text"></h2>
   </div>
     <div id="dogCard">
      <!--card elements generated from script.js (displayDogs())--> 
@@ -31,7 +60,8 @@
   
   <footer>
     <div>
-      <p>&copy; 2025 Furever Homes. All rights reserved.</p>
+      <p>Helping furry friends find their Furever Home</p>
     </div>
   </footer>
+  
 </html>
