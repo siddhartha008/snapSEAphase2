@@ -10,8 +10,9 @@
 
 //using both array(to store multiple dogs' data) and objects(to store each dog's different data as a key-value pair)
 
-
+let currentlyDisplayedDogs = dogsForAdoption;
 let dogsAdopted = []
+
 //testing some array's functionality 
 // dogsAdopted.push(dogsForAdoption[0])
 // dogsAdopted.push(dogsForAdoption[0].name) 
@@ -28,14 +29,31 @@ let dogsAdopted = []
 // console.log(dogsForAdoption) 
 
 
-function displayUpForAdotionDogs () {
+//default global filters: when displaying initially, everything is null 
+let filters = {
+  breed: null,
+  gender: null,
+  vaccinated: null,
+  size: null,
+};
 
+
+function displayUpForAdotionDogs () {
   document.querySelector(".up-for-adoption").style.backgroundColor = "#946b45";
   document.querySelector(".adopted-button").style.backgroundColor = "";
   document.getElementsByClassName("page-heading-text").textContent = "Dogs for Adoption"
+  
   const dogCards = document.getElementById("dogCard") //dogCard from HTML
   dogCards.innerHTML = ""; 
-  dogsForAdoption.forEach(cuteDog => { 
+
+  const displayedDogs = generateFilteredDogs();
+  if (displayedDogs.length === 0) {
+    dogCards.innerHTML = "<p>No dogs match your current filter criteria.</p>";
+    return; 
+  }
+
+  //the dataset has age in month so when displaying the age, trunc only returns the integer part after the division 
+  displayedDogs.forEach(cuteDog => { 
     const dogCard = document.createElement("div") //creating a div with class 'dogCard'
     dogCard.classList.add("dogCard")
     dogCard.innerHTML = `
@@ -51,7 +69,7 @@ function displayUpForAdotionDogs () {
     dogCards.appendChild(dogCard) //add the dogCard to the dogCards div
   })
 }
-//the dataset has age in month so when displaying the age, trunc only returns the integer part after the division 
+
 function adoptDog(adoptedDogId) 
 { 
   // console.log(dogId);
@@ -64,7 +82,6 @@ function adoptDog(adoptedDogId)
     }
   })
   dogsAdopted.push(adoptedDog);
-
   console.log(dogsAdopted);
   console.log(dogsForAdoption);
   
@@ -84,14 +101,17 @@ function displayAdoptedDogs() {
   const dogCards = document.getElementById("dogCard")
   dogCards.innerHTML = ""; 
   console.log(dogsAdopted);
+
   //displaying no adopted if adopted = 0
   if(dogsAdopted.length === 0) { 
     document.getElementById("dogCard").innerHTML = 
     `<p>No dogs have been adopted yet</p>`
   }
+  
   dogsAdopted.forEach((adoptedDog) => { 
     const adoptedDogCard = document.createElement("div")
     adoptedDogCard.classList.add("dogCard")
+
     adoptedDogCard.innerHTML = `
       <img src="${adoptedDog.image}" alt="${adoptedDog.name}">
       <h2>${adoptedDog.name}</h2>
@@ -100,11 +120,86 @@ function displayAdoptedDogs() {
       <p>Gender: ${adoptedDog.gender}</p>
       <p>Size: ${adoptedDog.size}</p>
     `
+
     dogCards.appendChild(adoptedDogCard);
   })
 }
 
+//applying the filters and generating the filtered list 
+function applyFilters() {
+  filters.breed = document.getElementById('filterBreed').value;
+  
+  const vaccinatedValue = document.getElementById('filterVaccinated').value;
+  filters.vaccinated = vaccinatedValue !== "" ? parseInt(vaccinatedValue) : null; 
+  
+  filters.gender = document.getElementById('filterGender').value; 
+  
+  filters.size = document.getElementById('filterSize').value;
+  
+  console.log("Applying filters:", filters); //debug purposes
+  
+  displayUpForAdotionDogs(); // "Refresh" the display with new filters
+}
+
+function generateFilteredDogs() { 
+  let filteredDogs = [...dogsForAdoption]; //copy of the original list using spread operator
+  if(filters.breed) { 
+    filteredDogs = filteredDogs.filter((dog) => dog.breed === filters.breed);
+  }
+
+  if (filters.vaccinated !== null) {
+    filteredDogs = filteredDogs.filter((dog) => dog.vaccinated === filters.vaccinated);
+  }
+
+  if (filters.gender) {
+    filteredDogs = filteredDogs.filter((dog) => dog.gender === filters.gender);
+  }
+
+  if(filters.size) {
+    filteredDogs = filteredDogs.filter((dog) => dog.size === filters.size);
+  }
+
+  return filteredDogs; 
+}
+
+function resetFilter() { 
+  document.getElementById('filterBreed').value = "";
+  document.getElementById('filterGender').value = "";
+  document.getElementById('filterVaccinated').value = "";
+  document.getElementById('filterSize').value = "";
+  
+  filters = {
+    breed: null,
+    gender: null,
+    vaccinated: null,
+    size: null,
+  };
+
+  displayUpForAdotionDogs();
+}
+
+//using js's reducer to counts number of dogs per breed available 
+function breedCount() { 
+
+}
+
 //sorting and filter using .sort() and comparefn 
+function sortByNameAsc() { 
+  dogsForAdoption.sort(
+    function(a,b) { 
+    return a.name.localeCompare(b.name);
+  })
+  displayUpForAdotionDogs();
+}
+
+function sortByNameDesc() { 
+  dogsForAdoption.sort(
+    function(a,b) { 
+    return b.name.localeCompare(a.name);
+  })
+  displayUpForAdotionDogs();
+}
+
 function sortByYoungest() { 
   dogsForAdoption.sort(
     function(a,b) { 
@@ -113,6 +208,7 @@ function sortByYoungest() {
   )
   displayUpForAdotionDogs();
 }
+
 function sortByOldest() { 
   dogsForAdoption.sort(
     function(a,b) {
@@ -121,28 +217,30 @@ function sortByOldest() {
   )
   displayUpForAdotionDogs();
 }
-function sortBySize() { 
+
+function sortByDaysInShelter() { 
   dogsForAdoption.sort(
     function(a,b) { 
-      return a.size - b.size; 
+      return b.daysInShelter - a.daysInShelter;
     }
   )
   displayUpForAdotionDogs();
 }
 
-function displayTheBreed(selectedBreed) { 
-  console.log(selectedBreed);
-  let selectedBreedList = dogsForAdoption.filter(dog => dog.breed===selectedBreed)
-  console.log(selectedBreedList);
-  displayUpForAdotionDogs(selectedBreedList);
+function toggleInfoPopup() { 
+  let popUpElement = document.getElementById('info-popup');
+  if(popUpElement.style.display == "block") { 
+    popUpElement.style.display == "none"; 
+  } else { 
+    popUpElement.style.display == "none";
+  }
 }
 
-function sortByWeight() { 
-  dogsForAdoption.sort(
-    function(a,b){
-      return a.weightLB - b.weightLB;
+function scrollToTop() { 
+  window.scrollTo({
+    top:0,
+    behavior: "smooth",
   })
-  displayUpForAdotionDogs();
 }
 
 //DOMContentLoaded means the webpage is loaded and .addEventListener will call displayDogs function when the page is loaded is loaded

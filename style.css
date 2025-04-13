@@ -3,6 +3,8 @@ body {
   margin: 0;
   padding: 0;
   background-color: #F5F7F1;
+  font-family: "Poppins", "Verdana", "sans-serif";
+  font-weight: 400;
 }
 
 .main-header {
@@ -23,39 +25,61 @@ body {
   display: flex;
   align-items: center;
 }
-.nav-left button,
-.nav-right button {
-  margin: 0 0.5em;
-}
 
-.sort-dropdown, .breed-dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.sort-menu, .breed-menu {
+.sort-menu{
   display: none;
   flex-direction: column;
   position: absolute;
+  top: 2.5em; 
   left: 0;
   background-color: #ffedd9;
   border: 1px solid #ccc;
-  padding: 2em;
+  padding: 1em;
   border-radius: 5px;
   min-width: 120px;
   z-index: 10;
 }
 
-.sort-dropdown.active .sort-menu,
-.breed-dropdown.active .breed-menu {
+.main-content-screen {
+  width: 80%;           
+  float: right;          
+  box-sizing: border-box;
+}
+
+.side-nav {
+  position: fixed;    
+  top: 10;
+  left: 0;            
+  width: 20%;          
+  height: 100%;        
+  background-color: #ffedd9;
+  padding: 1em;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+  z-index: 150;
+  box-sizing: border-box;
+}
+
+.side-nav h2 {
+  margin-top: 0;
+}
+
+.side-nav form {
   display: flex;
+  flex-direction: column;
+}
+
+.side-nav input,
+.side-nav select,
+.side-nav button {
+  margin-bottom: 1em;
+  padding: 0.5em;
+  font-size: 1em;
 }
 
 .title {
   margin: 0;
   text-align: center;
-  font-family: "Verdana";
-  font-weight: normal;
+  font-weight: 500;
   color: black;
 }
 
@@ -73,8 +97,6 @@ body {
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 15px;
-  
-  
 }
 
 .dogCard img {
@@ -84,7 +106,6 @@ body {
 }
 
 .card-content {
-  
   padding: 20px;
   font-family: "Verdana";
   color: #777;
@@ -93,21 +114,6 @@ body {
 .card-content h2 {
   margin-top: 0;
   font-size: 20px;
-}
-
-.sort-dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.sort-menu {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  background-color: #ffedd9;
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 5px;
 }
 
 .hidden {
@@ -132,10 +138,63 @@ button:hover {
   background: #d1477a;
 }
 
-
 footer {
-  display: flex;
-  justify-content: center;
-
   background-color: #946b45;
+  padding: 15px 0;
+  text-align: center;
+  color: white;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  clear: both;
+}
+
+.floating-icon {
+  position: fixed;
+  bottom: 20px;
+  cursor: pointer;
+  z-index: 100; 
+}
+
+#left-floating-icon {
+  left: 10px;
+}
+
+#right-floating-icon {
+  right: 20px;
+}
+
+.floating-icon img {
+  width: 45px;
+  height: 45px;
+}
+
+
+.popup {
+  position: fixed;
+  bottom: 80px; 
+  left: 20px; 
+  width: 300px;
+  padding: 1em;
+  background-color: #fff;
+  border: 2px solid #946b45;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  z-index: 200;
+  display: none; 
+}
+
+.popup p {
+  margin: 0 0 1em 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.popup button {
+  background-color: #ef7c8e;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
 }
