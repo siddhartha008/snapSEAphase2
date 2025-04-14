@@ -7,6 +7,8 @@ body {
   font-weight: 400;
   display: flex;
   flex-direction: column;
+  min-height: 100vh; /* Add this line */
+
 }
 
 .main-header {
@@ -34,12 +36,15 @@ body {
   align-items: center;
 }
 
-.nav-petted-icon img { 
+.why-this-project img, .nav-petted-icon img { 
   width: 40px;
   height: 40px;
   display: inline-block;
   cursor: pointer;
+  margin: 0.5em;
 }
+
+
 
 /* h2-page-heading style */
 .page-heading-div {

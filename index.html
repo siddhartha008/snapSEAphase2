@@ -13,7 +13,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
   </head>
 
   <body>
@@ -23,12 +22,15 @@
 
     <nav class="main-nav">
       <div class="nav-left">
-        <button class="up-for-adoption" onclick="displayUpForAdotionDogs()">Up for Adoption - <span class="noOfDogsCounts"></span></button>
-        <button class="adopted-button" onclick="displayAdoptedDogs()">Adopted - <span class="noOfAdoptedCounts"></span></button>
+        <button class="up-for-adoption" onclick="displayUpForAdotionDogs()">Up for Adoption: <span class="noOfDogsCounts"></span></button>
+        <button class="adopted-button" onclick="displayAdoptedDogs()">Adopted: <span class="noOfAdoptedCounts"></span></button>
       </div>
       <div class="nav-right">
         <span class="nav-petted-icon" onclick="displayPettedDogs()">
           <img src="assets/icons/not-petted.png">
+        </span>
+        <span class="why-this-project" onclick="displayWoof()">
+          <img src="assets/icons/paws.png">
         </span>
       </div>
     </nav>
@@ -38,9 +40,11 @@
     </div>
 
     <div class="main-page-wrapper">
+      
 
       <div id="filterSideNav" class="side-nav">
         <h2>Sort By</h2>
+        
         <div class="sort-container">
           <button class="aToZ" onclick="sortByNameAsc()">A-Z</button>
           <button class="zToA" onclick="sortByNameDesc()">Z-A</button>
@@ -48,7 +52,15 @@
           <button class="oldestSort" onclick="sortByOldest()">Senior</button>
           <button class="daysShelterSort" onclick="sortByDaysInShelter()">Days in Shelter</button>
         </div>
-
+        <div>
+          <label for="itemsPerPage">Doggies per page:</label>
+          <select id="itemsPerPage" onchange="setItemsPerPage(this.value)">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option selected value="All">All</option>
+          </select>
+        </div>
         <h2>Filters</h2>
         <div class="filter-container">
           <form id="filterForm">

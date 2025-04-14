@@ -1,19 +1,11 @@
-// This is a frontend catalog of a dog adoption website 
-//Users can see the list of adopted dogs and can also "adopt" by clicking the "adopt" button
+let dogsForAdoption = dogs;
+let dogsAdopted = [] //list of dogs that are adopted: initially empty
+let pettedDogs = [] //list of dogs that are virtually petted: initially empty
 
-/* the dogsForAdptoption array is an array of objects with all the dogs available for adoption 
- * (note: they have a "adopted" property(boolean) set to false by default) */
+let upForAdoptionDogsCount = dogsForAdoption.length;
+let adoptedDogsCount = dogsAdopted.length;
 
-// the dogsAdpoted array is an array of objects with all the dogs that were adopted (this array starts empty)
-// both the arrays are updated when the user clicks the "adopt" button - moving the dogs from the dogsForAdoption array to the dogsAdopted array 
-
-
-//using both array(to store multiple dogs' data) and objects(to store each dog's different data as a key-value pair)
-
-let dogsAdopted = [] //list of dogs that are adopted
-let pettedDogs = [] //list of dogs that are virtually petted
-
-//initial default filters to display all the dogs from the list
+//default filters to display all the dogs from the list initially
 let filters = {
   breed: null,
   gender: null,
@@ -23,43 +15,46 @@ let filters = {
   maxAge: null,
 };
 
-//testing some array's functionality: WORKS
-// dogsAdopted.push(dogsForAdoption[0])
-// dogsAdopted.push(dogsForAdoption[0].name) 
-// console.log(dogsForAdoption[0])
+//displaying logic and variables
+let itemsPerPage = 100; //#NOTE: because the number of dataset is less than 100 as of now so to display all elements, we can do 100 for now
 
-//   dogsForAdoption[2].adopted = true 
-//   for (let i = 0; i < dogsForAdoption.length; i++) {
-//     if (dogsForAdoption[i].adopted === true) {
-//       dogsAdopted.push(dogsForAdoption[i])
-//       dogsForAdoption.splice(i, 1)
-//     }
-//   }
-// console.log(dogsAdopted)
-// console.log(dogsForAdoption) 
-
+function setItemsPerPage(value) {
+  if (value !== "All") {
+    itemsPerPage = parseInt(value);
+  } else {
+    itemsPerPage = 100; 
+    randomOrderDisplay();
+  }
+  displayUpForAdotionDogs();
+}
 
 function displayUpForAdotionDogs () {
   document.querySelector(".up-for-adoption").style.backgroundColor = "#946b45";
   document.querySelector(".adopted-button").style.backgroundColor = "";
+  document.querySelector(".side-nav").classList.remove("hidden");
+  document.querySelector(".nav-petted-icon img").src = "assets/icons/not-petted.png";
   
   document.querySelector(".page-heading-text").textContent = "Dogs for Adoption"
   
-  document.querySelector(".noOfDogsCounts").textContent = dogsForAdoption.length;
-  document.querySelector(".noOfAdoptedCounts").textContent = dogsAdopted.length;
+  document.querySelector(".noOfDogsCounts").textContent = upForAdoptionDogsCount;
+  document.querySelector(".noOfAdoptedCounts").textContent = adoptedDogsCount;
   
   const dogCards = document.getElementById("dogCard") //dogCard from HTML
   dogCards.innerHTML = ""; 
 
-  const displayedDogs = generateFilteredDogs();
-  if (displayedDogs.length === 0) {
+  const dogsForAdoption = generateFilteredDogs();
+
+  //to show only certain number of dogs per page
+  const visibleDogs = dogsForAdoption.splice(0, itemsPerPage);
+
+  if (visibleDogs.length === 0) {
     dogCards.innerHTML = "<p>No dogs match your current filter criteria.</p>";
     document.getElementsByClassName("noOfDogsCounts").textContent = 0;
     return; 
   }
 
   //the dataset has age in month so when displaying the age, trunc only returns the integer part after the division 
-  displayedDogs.forEach(cuteDog => { 
+  visibleDogs.forEach(cuteDog => { 
     const dogCard = document.createElement("div") //creating a div with class 'dogCard'
     dogCard.classList.add("dogCard")
     dogCard.innerHTML = `
@@ -69,43 +64,45 @@ function displayUpForAdotionDogs () {
           <img src="${cuteDog.petted ? 'assets/icons/petted.png' : 'assets/icons/not-petted.png'}" alt="Paw Icon">
         </span>
       </h2>
-      <p>Breed: ${cuteDog.breed}</p>
-      <p>Age: ${Math.trunc(cuteDog.age / 12) >= 1 ? Math.trunc(cuteDog.age/12) + " years" : cuteDog.age + " months"}</p>
-      <p>Gender: ${cuteDog.gender}</p>
-      <p>Size: ${cuteDog.size}</p>
-      <p>Vaccinated: ${cuteDog.vaccinated == 0 ? 'Yes' : 'No'} </p>
-      <p>Looking for a home since: ${cuteDog.daysInShelter} days</p>
+      <p><strong>Breed</strong>: ${cuteDog.breed}</p>
+      <p><strong>Age</strong>: ${Math.trunc(cuteDog.age / 12) >= 1 ? Math.trunc(cuteDog.age/12) + " years" : cuteDog.age + " months"}</p>
+      <p><strong>Gender:</strong> ${cuteDog.gender}</p>
+      <p><strong>Size</strong>: ${cuteDog.size}</p>
+      <p><strong>Vaccinated</strong>: ${cuteDog.vaccinated == 0 ? 'Yes' : 'No'} </p>
+      <p><strong>Looking for a home since</strong>: ${cuteDog.daysInShelter} days</p>
       <button class="adopt-${cuteDog.name}" onclick="adoptDog(${cuteDog.id})">Adopt</button>
     `
     dogCards.appendChild(dogCard) //add the dogCard to the dogCards div
   })
 }
 
+//adopting a dog and updating the new list
 function adoptDog(adoptedDogId) 
 { 
   // console.log(dogId);
   let adoptedDog;  
   dogsForAdoption.forEach((cuteDog) => { 
     if(cuteDog.id === adoptedDogId) {
-      const indexOfAdoptedDog = dogsForAdoption.indexOf(cuteDog); 
-      dogsForAdoption.splice(indexOfAdoptedDog, 1);
       adoptedDog = cuteDog; 
+      const indexOfAdoptedDog = dogsForAdoption.indexOf(cuteDog); 
+      dogsForAdoption.splice(indexOfAdoptedDog, 1); //splice removes the adopted dog from the dogsForAdopton list. 1 incidiates remove only one element (itself) from the index
     }
   })
+  //update the dogsAdopted list
   dogsAdopted.push(adoptedDog);
-  console.log(dogsAdopted);
-  console.log(dogsForAdoption);
   
   const alertMsg = `${adoptedDog.name} found ${adoptedDog.gender === "Female" ? "her" : "his"} furever home.`
   alert(alertMsg);
-
+  upForAdoptionDogsCount--; 
+  adoptedDogsCount++;
   displayUpForAdotionDogs();
 }
 
 function displayAdoptedDogs() {
   document.querySelector(".adopted-button").style.backgroundColor = "#946b45";
   document.querySelector(".up-for-adoption").style.backgroundColor = "";
-  
+  document.querySelector(".side-nav").classList.add("hidden"); //not showing sort and filter for adopted
+  document.querySelector(".nav-petted-icon img").src = "assets/icons/not-petted.png";
   
   document.querySelector(".page-heading-text").textContent = "Adopted Furry Friends"
   document.querySelector(".noOfAdoptedCounts").textContent = dogsAdopted.length;
@@ -115,12 +112,13 @@ function displayAdoptedDogs() {
   dogCards.innerHTML = ""; 
   console.log(dogsAdopted);
 
-  //displaying no adopted if adopted = 0
+  //displaying no dogs adopted yet, if adoptedList length = 0
   if(dogsAdopted.length === 0) { 
     document.getElementById("dogCard").innerHTML = 
     `<p>No dogs have been adopted yet</p>`
   }
   
+  //else dogs adopted, then display all the cards 
   dogsAdopted.forEach((adoptedDog) => { 
     const adoptedDogCard = document.createElement("div")
     adoptedDogCard.classList.add("dogCard")
@@ -133,7 +131,6 @@ function displayAdoptedDogs() {
       <p>Gender: ${adoptedDog.gender}</p>
       <p>Size: ${adoptedDog.size}</p>
     `
-
     dogCards.appendChild(adoptedDogCard);
   })
 }
@@ -154,7 +151,7 @@ function displayPettedDogs() {
   //displaying no dogs petted if pet = 0
   if(pettedDogs.length === 0) { 
     document.getElementById("dogCard").innerHTML = 
-    `<p>You haven't pet any dogs today. Click the paws icon on the main page to pet them. :D </p>`
+    `<p>You haven't pet any dogs today. Click the paws icon on the dog's card to pet them. :D </p>`
   }
   
   pettedDogs.forEach((pettedDog) => { 
@@ -172,7 +169,6 @@ function displayPettedDogs() {
     dogCards.appendChild(pettedDogCard);
   })
 }
-
 
 //applying the filters and generating the filtered list 
 function applyFilters() {
@@ -250,6 +246,7 @@ function resetFilter() {
   document.getElementById('filterSize').value = "";
   document.querySelector('.minAge').value = "";
   document.querySelector('.maxAge').value = "";
+  itemsPerPage = 100;
 
   sortButtonsColorReset();
 
@@ -262,12 +259,7 @@ function resetFilter() {
     maxAge: null,
   };
 
-  dogsForAdoption.sort(
-    function() {
-      return 0.5 - Math.random();
-    }
-  )
-
+  randomOrderDisplay();
   displayUpForAdotionDogs();
 }
 
@@ -355,13 +347,12 @@ function toggleInfoPopup() {
   }
 }
 
-function scrollToTop() { 
-  window.scrollTo({
-    top:0,
-    behavior: "smooth",
-  })
+function displayWoof() { 
+  alert("This is not an official adoption website. All images are AI-generated using OpenAI's 4o models, and the dog details are inspired from a Kaggle's dataset.");
 }
-
-//DOMContentLoaded means the webpage is loaded and .addEventListener will call displayDogs function when the page is loaded is loaded
-document.addEventListener("DOMContentLoaded", displayAdoptedDogs);
+// //DOMContentLoaded means the webpage is loaded and .addEventListener will call displayDogs function when the page is loaded is loaded
+document.addEventListener("DOMContentLoaded", function() { 
+  randomOrderDisplay(); //display the list in random order initially
+  displayUpForAdotionDogs();
+});
 
