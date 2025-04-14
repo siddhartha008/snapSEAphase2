@@ -33,7 +33,7 @@ This project is a catalog for a dog adoption website where users can:
 - Control how many items are shown on the page (with options such as 5, 10, 15,
   or All) with an infinite scroll.
 
-## The UI is optimized for a 13-inch MacBook, as responsiveness for other screen size was not the primary focus.
+## The UI is optimized for a 13-inch MacBook, as responsiveness for other screen sizes was not the primary focus.
 
 ## Features
 
@@ -46,7 +46,7 @@ This project is a catalog for a dog adoption website where users can:
 
 - **Dynamic Display Options:**
   - Initially, all available dogs are shown. However, the user can set to
-    display 5, 10, or 15 dogs per view
+    Display 5, 10, or 15 dogs per view
 
 - **Interactive UI:**
   - Clicking the small paw icon next to a dog’s name toggles between an empty
@@ -62,7 +62,7 @@ This project is a catalog for a dog adoption website where users can:
 
 ## Dataset Edit & Modifications
 
-- The original dataset is from a Kaggle repositor(🐾 Predict Pet Adoption Status
+- The original dataset is from a Kaggle repository (🐾 Predict Pet Adoption Status
   Dataset 🐾 by Rabie El Kharoua):
   https://www.kaggle.com/datasets/rabieelkharoua/predict-pet-adoption-status-dataset/data
 - Note: This dataset was modified last 10 months ago (as of 04.14.2025)
@@ -73,7 +73,7 @@ This project is a catalog for a dog adoption website where users can:
   - Expanded the original dataset (which had only three breeds: Golden, Lab, and
     Poodle) to include additional breeds such as Japanese Spitz, Pug, Boxer, and
     Husky.
-  - Converted the age in months(in script.js) to years (by dividing by 12 and
+  - Convert the age in months(in script.js) to years (by dividing by 12 and
     truncating the result).
 
 - **Dataset Conversion:**\
