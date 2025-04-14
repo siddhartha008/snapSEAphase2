@@ -62,7 +62,7 @@ This project is a catalog for a dog adoption website where users can:
 
 ## Dataset Edit & Modifications
 
-- The original dataset is from a Kaggle repository (🐾 Predict Pet Adoption Status
+- I downloaded the original dataset from a Kaggle repository (🐾 Predict Pet Adoption Status
   Dataset 🐾 by Rabie El Kharoua):
   https://www.kaggle.com/datasets/rabieelkharoua/predict-pet-adoption-status-dataset/data
 - Note: This dataset was modified last 10 months ago (as of 04.14.2025)
