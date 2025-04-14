@@ -26,6 +26,11 @@
         <button class="up-for-adoption" onclick="displayUpForAdotionDogs()">Up for Adoption - <span class="noOfDogsCounts"></span></button>
         <button class="adopted-button" onclick="displayAdoptedDogs()">Adopted - <span class="noOfAdoptedCounts"></span></button>
       </div>
+      <div class="nav-right">
+        <span class="nav-petted-icon" onclick="displayPettedDogs()">
+          <img src="assets/icons/not-petted.png">
+        </span>
+      </div>
     </nav>
 
     <div class="page-heading-div">
@@ -37,11 +42,11 @@
       <div id="filterSideNav" class="side-nav">
         <h2>Sort By</h2>
         <div class="sort-container">
-          <button onclick="sortByNameAsc()">A-Z</button>
-          <button onclick="sortByNameDesc()">Z-A</button>
-          <button onclick="sortByYoungest()">Youngest</button>
-          <button onclick="sortByOldest()">Senior</button>
-          <button onclick="sortByDaysInShelter()">Days in Shelter</button>
+          <button class="aToZ" onclick="sortByNameAsc()">A-Z</button>
+          <button class="zToA" onclick="sortByNameDesc()">Z-A</button>
+          <button class="youngestSort" onclick="sortByYoungest()">Youngest</button>
+          <button class="oldestSort" onclick="sortByOldest()">Senior</button>
+          <button class="daysShelterSort" onclick="sortByDaysInShelter()">Days in Shelter</button>
         </div>
 
         <h2>Filters</h2>
@@ -95,34 +100,18 @@
           </form>
         </div>
       </div> <div class="main-content-screen">
-        <div id="dogCard">
-        </div>
-      </div> </div>
-    <div id="left-floating-icon" class="floating-icon" onclick="toggleInfoPopup()">
-        <img src="assets/icons/paws.png" alt="Info" />
+        <div id="dogCard"></div>
+      </div> 
     </div>
-
-    <div id="right-floating-icon" class="floating-icon" onclick="scrollToTop()">
-        <img src="assets/icons/scroll-top-icon.png" alt="Scroll to Top" />
-    </div>
-
-      <div id="info-popup" class="popup">
-        <p>
-          I grew up in a country where stray dogs were in every block of the street — it left a lasting impact on me. I have always dreamed of helping them find loving homes.
-          If I ever reach a point in life where I can do things without worrying about money,
-          I would want to build shelters and create a space where every dog gets a second chance.
-          That’s why I chose to build this catalog website. It reflects a small part of that dream by displaying dogs for adoption and giving them a space to be seen.
-
-          PS: All images in this project are AI-generated using Open AI's 4o mdodel. None of the dogs on the website are up for adoption.
-        </p>
-        <button onclick="toggleInfoPopup()">Close</button>
-    </div>
-
+  
+    
+    <div class="footer">
     <footer>
       <div>
         <p>Helping furry friends find their Furever Home</p>
       </div>
     </footer>
-
+    </div>
+  
   </body>
 </html>
