@@ -11,6 +11,7 @@ let dogsForAdoption = [
       "vaccinated": 0,
       "daysInShelter": 85,
       "gender": "Male",
+      "isPetted": false,
       "image": "./assets/dogsimages/golden.png"
     },
     {
@@ -25,6 +26,7 @@ let dogsForAdoption = [
       "vaccinated": 0,
       "daysInShelter": 1,
       "gender": "Female",
+      "isPetted": false,
       "image": "./assets/dogsimages/golden.png"
     },
     
@@ -40,6 +42,7 @@ let dogsForAdoption = [
       "vaccinated": 1,
       "daysInShelter": 73,
       "gender": "Female",
+      "isPetted": false,
       "image": "./assets/dogsimages/pug.png"
     },
     {
@@ -54,6 +57,7 @@ let dogsForAdoption = [
       "vaccinated": 1,
       "daysInShelter": 30,
       "gender": "Male",
+      "isPetted": false,
       "image": "./assets/dogsimages/pug.png"
     },
    
@@ -69,6 +73,7 @@ let dogsForAdoption = [
       "vaccinated": 1,
       "daysInShelter": 84,
       "gender": "Female",
+      "isPetted": false,
       "image": "./assets/dogsimages/pug.png"
     },
     {
@@ -83,6 +88,7 @@ let dogsForAdoption = [
       "vaccinated": 0,
       "daysInShelter": 83,
       "gender": "Female",
+      "isPetted": false,
       "image": "./assets/dogsimages/pug.png"
     },
     {
@@ -97,6 +103,7 @@ let dogsForAdoption = [
       "vaccinated": 0,
       "daysInShelter": 40,
       "gender": "Male",
+      "isPetted": false,
       "image": "./assets/dogsimages/pug.png"
     },
 
@@ -112,6 +119,7 @@ let dogsForAdoption = [
       "vaccinated": 1,
       "daysInShelter": 5,
       "gender": "Female",
+      "isPetted": false,
       "image": "./assets/dogsimages/husky.png"
     },
     
@@ -127,6 +135,7 @@ let dogsForAdoption = [
       "vaccinated": 1,
       "daysInShelter": 81,
       "gender": "Female",
+      "isPetted": false,
       "image": "./assets/dogsimages/husky.png"
     },
     {
@@ -141,6 +150,7 @@ let dogsForAdoption = [
       "vaccinated": 1,
       "daysInShelter": 77,
       "gender": "Male",
+      "isPetted": false,
       "image": "./assets/dogsimages/husky.png"
     },
     {
@@ -155,6 +165,7 @@ let dogsForAdoption = [
       "vaccinated": 0,
       "daysInShelter": 37,
       "gender": "Female",
+      "isPetted": false,
       "image": "./assets/dogsimages/husky.png"
     },
     {
@@ -169,6 +180,7 @@ let dogsForAdoption = [
       "vaccinated": 0,
       "daysInShelter": 64,
       "gender": "Male",
+      "isPetted": false,
       "image": "./assets/dogsimages/husky.png"
     },
     
@@ -185,6 +197,7 @@ let dogsForAdoption = [
       "vaccinated": 1,
       "daysInShelter": 86,
       "gender": "Female",
+      "isPetted": false,
       "image": "./assets/dogsimages/lab.png"
     },
     {
@@ -199,6 +212,7 @@ let dogsForAdoption = [
       "vaccinated": 0,
       "daysInShelter": 82,
       "gender": "Male",
+      "isPetted": false,
       "image": "./assets/dogsimages/lab.png"
     },
     {
@@ -213,6 +227,7 @@ let dogsForAdoption = [
       "vaccinated": 1,
       "daysInShelter": 88,
       "gender": "Female",
+      "isPetted": false,
       "image": "./assets/dogsimages/lab.png"
     },
     {
@@ -227,6 +242,7 @@ let dogsForAdoption = [
       "vaccinated": 1,
       "daysInShelter": 17,
       "gender": "Female",
+      "isPetted": false,
       "image": "./assets/dogsimages/lab.png"
     },
     {
@@ -241,6 +257,7 @@ let dogsForAdoption = [
       "vaccinated": 1,
       "daysInShelter": 51,
       "gender": "Male",
+      "isPetted": false,
       "image": "./assets/dogsimages/lab.png"
     },
     {
@@ -255,6 +272,7 @@ let dogsForAdoption = [
       "vaccinated": 0,
       "daysInShelter": 31,
       "gender": "Female",
+      "isPetted": false,
       "image": "./assets/dogsimages/jspitz.png"
     },
     {
@@ -269,6 +287,7 @@ let dogsForAdoption = [
       "vaccinated": 0,
       "daysInShelter": 45,
       "gender": "Male",
+      "isPetted": false,
       "image": "./assets/dogsimages/jspitz.png"
     },
     {
@@ -283,6 +302,7 @@ let dogsForAdoption = [
       "vaccinated": 1,
       "daysInShelter": 87,
       "gender": "Female",
+      "isPetted": false,
       "image": "./assets/dogsimages/jspitz.png"
     },
     {
@@ -297,6 +317,7 @@ let dogsForAdoption = [
       "vaccinated": 1,
       "daysInShelter": 38,
       "gender": "Female",
+      "isPetted": false,
       "image": "./assets/dogsimages/jspitz.png"
     },
     {
@@ -311,6 +332,7 @@ let dogsForAdoption = [
       "vaccinated": 0,
       "daysInShelter": 8,
       "gender": "Male",
+      "isPetted": false,
       "image": "./assets/dogsimages/jspitz.png"
     },
     {
@@ -325,6 +347,7 @@ let dogsForAdoption = [
       "vaccinated": 1,
       "daysInShelter": 14,
       "gender": "Male",
+      "isPetted": false,
       "image": "./assets/dogsimages/boxer.png"
     },
     {
@@ -339,6 +362,7 @@ let dogsForAdoption = [
       "vaccinated": 1,
       "daysInShelter": 24,
       "gender": "Male",
+      "isPetted": false,
       "image": "./assets/dogsimages/boxer.png"
     },
     {
@@ -353,6 +377,7 @@ let dogsForAdoption = [
       "vaccinated": 1,
       "daysInShelter": 51,
       "gender": "Female",
+      "isPetted": false,
       "image": "./assets/dogsimages/boxer.png"
     },
     {
@@ -367,6 +392,7 @@ let dogsForAdoption = [
       "vaccinated": 1,
       "daysInShelter": 46,
       "gender": "Female",
+      "isPetted": false,
       "image": "./assets/dogsimages/boxer.png"
     },
     {
@@ -381,6 +407,7 @@ let dogsForAdoption = [
       "vaccinated": 1,
       "daysInShelter": 16,
       "gender": "Female",
+      "isPetted": false,
       "image": "./assets/dogsimages/boxer.png"
     },
     {
@@ -395,6 +422,7 @@ let dogsForAdoption = [
       "vaccinated": 1,
       "daysInShelter": 67,
       "gender": "Male",
+      "isPetted": false,
       "image": "./assets/dogsimages/poodle.png"
     },
     {
@@ -409,6 +437,7 @@ let dogsForAdoption = [
       "vaccinated": 0,
       "daysInShelter": 19,
       "gender": "Male",
+      "isPetted": false,
       "image": "./assets/dogsimages/poodle.png"
     },
     {
@@ -423,6 +452,7 @@ let dogsForAdoption = [
       "vaccinated": 0,
       "daysInShelter": 75,
       "gender": "Male",
+      "isPetted": false,
       "image": "./assets/dogsimages/poodle.png"
     },
     
@@ -438,6 +468,7 @@ let dogsForAdoption = [
       "vaccinated": 1,
       "daysInShelter": 60,
       "gender": "Male",
+      "isPetted": false,
       "image": "./assets/dogsimages/poodle.png"
     },
     
@@ -453,6 +484,7 @@ let dogsForAdoption = [
       "vaccinated": 1,
       "daysInShelter": 36,
       "gender": "Female",
+      "isPetted": false,
       "image": "./assets/dogsimages/poodle.png"
     }
   ]

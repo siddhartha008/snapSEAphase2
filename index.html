@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Furever Home</title> 
-    
-    <link rel="icon" href="assets/icons/paws.png" type="image/x-icon" />  
-    
+    <title>Furever Home</title>
+
+    <link rel="icon" href="assets/icons/paws.png" type="image/x-icon" />
+
     <meta name="description" content="Helping dogs find their forever homes." />
     <link rel="stylesheet" href="style.css" />
     <script src="./dataset.js"></script>
     <script type="text/javascript" src="scripts.js"></script>
 
-    <!--Poppins Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -23,107 +22,107 @@
     </header>
 
     <nav class="main-nav">
-      <!--left side of the navigation bar-->
       <div class="nav-left">
-        <button class="up-for-adoption" onclick="displayUpForAdotionDogs()">Up for Adoption</button>
-        <button class="adopted-button" onclick="displayAdoptedDogs()">Adopted</button>
+        <button class="up-for-adoption" onclick="displayUpForAdotionDogs()">Up for Adoption - <span class="noOfDogsCounts"></span></button>
+        <button class="adopted-button" onclick="displayAdoptedDogs()">Adopted - <span class="noOfAdoptedCounts"></span></button>
       </div>
     </nav>
-    
-    <div>
+
+    <div class="page-heading-div">
       <h2 class="page-heading-text"></h2>
     </div>
 
-    <div class="main-content-screen">
-      <div id="dogCard">
-      <!--card elements generated from script.js (displayDogs())--> 
-      </div>
-    </div>
+    <div class="main-page-wrapper">
 
-    <div id="filterSideNav" class="side-nav">
-      <h2>Sort By</h2>
-      <div class="sort-container">
-        <button onclick="sortByNameAsc()">A-Z</button>
-        <button onclick="sortByNameDesc()">Z-A</button>
-        <button onclick="sortByYoungest()">Youngest</button>
-        <button onclick="sortByOldest()">Senior</button>
-        <button onclick="sortByDaysInShelter()">Days in Shelter</button>
-      </div>
+      <div id="filterSideNav" class="side-nav">
+        <h2>Sort By</h2>
+        <div class="sort-container">
+          <button onclick="sortByNameAsc()">A-Z</button>
+          <button onclick="sortByNameDesc()">Z-A</button>
+          <button onclick="sortByYoungest()">Youngest</button>
+          <button onclick="sortByOldest()">Senior</button>
+          <button onclick="sortByDaysInShelter()">Days in Shelter</button>
+        </div>
 
-      <div class="">
-      <h2>Filters</h2>
-    </div>
-      <form id="filterForm">
-        <label for="filterBreed">Breed:</label>
-        <select id="filterBreed">
-          <option value="">All Breeds</option>
-          <option value="Boxer">Boxer</option>
-          <option value="Golden Retriever">Golden Retriever</option>
-          <option value="Husky">Husky</option>
-          <option value="Japanese Spitz">Japanese Spitz</option>
-          <option value="Labrador">Labrador</option>
-          <option value="Poodle">Poodle</option>
-          <option value="Pug">Pug</option>
-        </select>
-    
-        <label for="filterGender">Gender:</label>
-        <select id="filterGender">
-          <option value="">No Preference</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-        </select>
+        <h2>Filters</h2>
+        <div class="filter-container">
+          <form id="filterForm">
+            <label for="filterBreed">Breed:</label>
+            <select id="filterBreed">
+              <option value="">All Breeds</option>
+              <option value="Boxer">Boxer</option>
+              <option value="Golden Retriever">Golden Retriever</option>
+              <option value="Husky">Husky</option>
+              <option value="Japanese Spitz">Japanese Spitz</option>
+              <option value="Labrador">Labrador</option>
+              <option value="Poodle">Poodle</option>
+              <option value="Pug">Pug</option>
+            </select>
 
-        <label for="filterVaccinated">Vaccinated:</label>
-        <select id="filterVaccinated">
-          <option value="">No Preference</option>
-          <option value="0">Yes</option>
-          <option value="1">No</option>
-        </select>
+            <label for="filterGender">Gender:</label>
+            <select id="filterGender">
+              <option value="">No Preference</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
 
-        <label for="filterSize">Size:</label>
-        <select id="filterSize">
-          <option value="">All Size</option>
-          <option value="Small">Small</option>
-          <option value="Medium">Medium</option>
-          <option value="Large">Large</option>
-        </select>
-    
-        <button type="button" onclick="applyFilters()">Apply Filters</button>
-        <button type="button" onclick="resetFilter()">Reset Filters</button>
+            <label for="filterVaccinated">Vaccinated:</label>
+            <select id="filterVaccinated">
+              <option value="">No Preference</option>
+              <option value="0">Yes</option>
+              <option value="1">No</option>
+            </select>
 
-      </form>
-    </div>
+            <label for="filterSize">Size:</label>
+            <select id="filterSize">
+              <option value="">All Size</option>
+              <option value="Small">Small</option>
+              <option value="Medium">Medium</option>
+              <option value="Large">Large</option>
+            </select>
 
-      <!-- left and right floating icon (woof and swipe up)-->
+            <label for="ageRange"> Age Range(0 - 14 in years):
+              <br>
+              <input type="number" value="" min="0" max="14" class="minAge"> </input>
+              <span> to </span>
+              <input type="number" min="0" max="14" class="maxAge"> </input>
+              <span>years</span>
+            </label>
+
+            <button type="button" onclick="applyFilters()">Apply Filters</button>
+            <button type="button" onclick="resetFilter()">Reset Filters</button>
+
+          </form>
+        </div>
+      </div> <div class="main-content-screen">
+        <div id="dogCard">
+        </div>
+      </div> </div>
     <div id="left-floating-icon" class="floating-icon" onclick="toggleInfoPopup()">
         <img src="assets/icons/paws.png" alt="Info" />
     </div>
-      
+
     <div id="right-floating-icon" class="floating-icon" onclick="scrollToTop()">
         <img src="assets/icons/scroll-top-icon.png" alt="Scroll to Top" />
     </div>
-      
-      <!-- initially hidden pop up -->
-    <div id="info-popup" class="popup">
+
+      <div id="info-popup" class="popup">
         <p>
-          I grew up in a country where stray dogs were in every block of the street — it left a lasting impact on me. I have always dreamed of helping them find loving homes. 
-          If I ever reach a point in life where I can do things without worrying about money, 
-          I would want to build shelters and create a space where every dog gets a second chance. 
+          I grew up in a country where stray dogs were in every block of the street — it left a lasting impact on me. I have always dreamed of helping them find loving homes.
+          If I ever reach a point in life where I can do things without worrying about money,
+          I would want to build shelters and create a space where every dog gets a second chance.
           That’s why I chose to build this catalog website. It reflects a small part of that dream by displaying dogs for adoption and giving them a space to be seen.
-          
-          PS: All images in this project are AI-generated using Open AI's 4o mdodel. None of the dogs on the website are up for adoption. 
+
+          PS: All images in this project are AI-generated using Open AI's 4o mdodel. None of the dogs on the website are up for adoption.
         </p>
         <button onclick="toggleInfoPopup()">Close</button>
     </div>
-    
+
     <footer>
       <div>
         <p>Helping furry friends find their Furever Home</p>
       </div>
     </footer>
-    
+
   </body>
-  
-  
-  
 </html>

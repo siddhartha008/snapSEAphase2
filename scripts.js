@@ -12,6 +12,7 @@
 
 let currentlyDisplayedDogs = dogsForAdoption;
 let dogsAdopted = []
+let pettedDogs = []
 
 //testing some array's functionality 
 // dogsAdopted.push(dogsForAdoption[0])
@@ -35,13 +36,19 @@ let filters = {
   gender: null,
   vaccinated: null,
   size: null,
+  minAge: null,
+  maxAge: null,
 };
 
 
 function displayUpForAdotionDogs () {
   document.querySelector(".up-for-adoption").style.backgroundColor = "#946b45";
   document.querySelector(".adopted-button").style.backgroundColor = "";
-  document.getElementsByClassName("page-heading-text").textContent = "Dogs for Adoption"
+  
+  document.querySelector(".page-heading-text").textContent = "Dogs for Adoption"
+  
+  document.querySelector(".noOfDogsCounts").textContent = dogsForAdoption.length;
+  document.querySelector(".noOfAdoptedCounts").textContent = dogsAdopted.length;
   
   const dogCards = document.getElementById("dogCard") //dogCard from HTML
   dogCards.innerHTML = ""; 
@@ -49,6 +56,7 @@ function displayUpForAdotionDogs () {
   const displayedDogs = generateFilteredDogs();
   if (displayedDogs.length === 0) {
     dogCards.innerHTML = "<p>No dogs match your current filter criteria.</p>";
+    document.getElementsByClassName("noOfDogsCounts").textContent = 0;
     return; 
   }
 
@@ -58,12 +66,17 @@ function displayUpForAdotionDogs () {
     dogCard.classList.add("dogCard")
     dogCard.innerHTML = `
       <img src="${cuteDog.image}" alt="${cuteDog.name}">
-      <h2>${cuteDog.name}</h2>
+      <h2>${cuteDog.name} 
+        <span class="paw-icon" onclick="togglePetted(${cuteDog.id})"> 
+          <img src="${cuteDog.petted ? 'assets/icons/petted.png' : 'assets/icons/not-petted.png'}" alt="Paw Icon">
+        </span>
+      </h2>
       <p>Breed: ${cuteDog.breed}</p>
       <p>Age: ${Math.trunc(cuteDog.age / 12) >= 1 ? Math.trunc(cuteDog.age/12) + " years" : cuteDog.age + " months"}</p>
       <p>Gender: ${cuteDog.gender}</p>
       <p>Size: ${cuteDog.size}</p>
       <p>Vaccinated: ${cuteDog.vaccinated == 0 ? 'Yes' : 'No'} </p>
+      <p>Looking for a home since: ${cuteDog.daysInShelter} days</p>
       <button class="adopt-${cuteDog.name}" onclick="adoptDog(${cuteDog.id})">Adopt</button>
     `
     dogCards.appendChild(dogCard) //add the dogCard to the dogCards div
@@ -94,8 +107,10 @@ function adoptDog(adoptedDogId)
 function displayAdoptedDogs() {
   document.querySelector(".adopted-button").style.backgroundColor = "#946b45";
   document.querySelector(".up-for-adoption").style.backgroundColor = "";
-  document.getElementsByClassName("sortAndSearchSection").display = 'none';
-  document.getElementsByClassName("page-heading-text").innerHTML = ""
+  
+  
+  document.querySelector(".page-heading-text").textContent = "Adopted Furry Friends"
+  document.querySelector(".noOfAdoptedCounts").textContent = dogsAdopted.length;
   
   console.log("ADOPTED button pressed from HTML")
   const dogCards = document.getElementById("dogCard")
@@ -135,8 +150,18 @@ function applyFilters() {
   filters.gender = document.getElementById('filterGender').value; 
   
   filters.size = document.getElementById('filterSize').value;
+
+  const minAgeFromHTML = document.querySelector('.minAge').value;
+  const maxAgeFromHTML = document.querySelector('.maxAge').value;
+  if(isNaN(minAgeFromHTML) || isNaN(maxAgeFromHTML) || minAgeFromHTML < 0 || maxAgeFromHTML > 14 || minAgeFromHTML > 14 || maxAgeFromHTML < 0 || minAgeFromHTML > maxAgeFromHTML) {
+    alert("Input Error in Age Range. Make sure the minimum age is at least 0 and the maximum age is greater than minimum age and at most 14.");
+    return;
+  }
+
+  filters.minAge = minAgeFromHTML ? minAgeFromHTML : null; //null if no minAgefromHTML is found
+  filters.maxAge = maxAgeFromHTML ? maxAgeFromHTML : null; //null if no maxAgefromHTML is found
   
-  console.log("Applying filters:", filters); //debug purposes
+  console.log("Applying filters:", filters); //for debugging purposes
   
   displayUpForAdotionDogs(); // "Refresh" the display with new filters
 }
@@ -159,6 +184,20 @@ function generateFilteredDogs() {
     filteredDogs = filteredDogs.filter((dog) => dog.size === filters.size);
   }
 
+  if ( filters.minAge && filters.maxAge) { 
+    
+    if ( (filters.minAge) === 0 && (filters.maxAge) === 0 ) {
+      //the dataset has age in month so we don't need to divide age<12 by 12 to display month-old dogs
+      filteredDogs = filteredDogs.filter(dog => dog.age < 12);
+    }
+    else {
+    filteredDogs = filteredDogs.filter(
+      (dog) => {
+        let ageInYear = Math.trunc(dog.age / 12); 
+        return ( (ageInYear >= filters.minAge) && (ageInYear <= filters.maxAge) );
+      }
+    )}
+  }
   return filteredDogs; 
 }
 
@@ -168,18 +207,39 @@ function resetFilter() {
   document.getElementById('filterVaccinated').value = "";
   document.getElementById('filterSize').value = "";
   
+  document.querySelector('.minAge').value = "";
+  document.querySelector('.maxAge').value = "";
+
+  
   filters = {
     breed: null,
     gender: null,
     vaccinated: null,
     size: null,
+    minAge: null,
+    maxAge: null,
   };
 
   displayUpForAdotionDogs();
 }
 
-//using js's reducer to counts number of dogs per breed available 
-function breedCount() { 
+function togglePetted(petID) { 
+  let dog = dogsForAdoption.find((dog) => dog.id === petID);
+  if (!dog) { 
+    dog = dogsAdopted.find((dog) => dog.id === petID);
+  }
+
+  dog.petted = !(dog.petted); 
+  if(dog.petted) { 
+    if(!pettedDogs.some((dog) => dog.id === petID)) {  //some checks if at least one element matches the given condition
+      pettedDogs.push(dog);
+    } 
+  } else {  
+    pettedDogs = pettedDogs.filter((dog) => dog.id !== petID); //"unpet the dog" :( filters the dogID that doesn't match the unpetted dog
+  }
+
+  console.log(pettedDogs);
+  displayUpForAdotionDogs();
 
 }
 
