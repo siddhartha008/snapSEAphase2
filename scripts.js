@@ -53,6 +53,14 @@ function displayUpForAdotionDogs () {
   const visibleDogs = dogsForAdoption.splice(0, doggiesPerPage);
 
 
+
+  if(upForAdoptionDogsCount===0) {
+    //all dogs are adopted <3 
+    dogCards.innerHTML = "<p>All the dogs found their furever homes. Happy ending :)</p>"
+    return;
+  }
+
+
   if (visibleDogs.length === 0) {
     dogCards.innerHTML = "<p>No dogs match your current filter criteria.</p>";
     document.getElementsByClassName("noOfDogsCounts").textContent = 0;
