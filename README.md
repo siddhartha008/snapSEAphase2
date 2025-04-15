@@ -1,132 +1,118 @@
-# SEA Stage 2 - Data Catalog Project
+# Furever Home
 
-This repository contains the instructions, requirements, and starter code for Stage Two of the Snap Engineering Academy application process.
+## **Furever Home** is a frontend catalog of a dog adoption website built with HTML, CSS, and JavaScript. This project demonstrates my data-structure skills in JS of arrays and objects through dynamic UI updates and maipulating data(filtering, sorting, updating, and removing) and DOM manipulation—all without external frameworks.
 
----
+## Table of Contents
 
-## 📚 Table of Contents
-
-- [Your Task](#your-task)
-- [Requirements](#requirements---your-catalog-website-should)
-- [Getting Started](#getting-started)
-- [Submitting](#submitting)
-- [❓ Frequently Asked Questions (FAQ)](#-frequently-asked-questions-faq)
-
----
-
-## 🎯 Your Task
-
-### <p align="center">Create a "catalog" website for something you're passionate about.</p>
-
-> 📝 **Note:**  
-> If you have not used GitHub or programmed a website with JavaScript before, that's OK! Part of the challenge is figuring out things you're not familiar with.
+- [Overview](#overview)
+- [Features](#features)
+- [Dataset Edit & Modifications](#dataset-edit--modifications)
+- [Why This Project?](#why-this-project)
+- [Learning Resources](#learning-resources)
+- [Usage](#usage)
+- [Feedback and Comments](#feedback-and-comments)
 
 ---
 
-## ✅ Requirements - Your Catalog Website Should...
-
-- Show off your understanding of basic data structures: **arrays** and **objects**.
-- Display a **substantial amount of interesting data** in a "catalog". You can look online for datasets or create your own.  
-  Your data should be easy to find in your source code—either in variables at the top of `scripts.js` or imported from a file.
-- Include **two or more features** that operate on your data and modify how it's displayed. Examples:
-  - Filtering
-  - Searching
-  - Sorting
-  - Updating
-  - Adding/removing entries  
-    Think about what users might want to do while using your site!
-- Look polished ✨. Use **HTML** and **CSS** to make your data easy to read and visually appealing.
-- Be built from this **starter code**—you can change anything you want, but build on top of it.
-- Be an **original** project. Please do not submit something previously created for a class, internship, or client.  
-  You are encouraged to use online resources, but **make sure you understand every line of code** in your project.
+**Note:** This is not an official adoption website. All images are AI-generated
+using OpenAI's 4o models, and the dog details are inspired from a Kaggle's
+dataset. This website was create to showcase my data structure knowledge in
+JavaScript.
 
 ---
 
-## 🛠️ Getting Started
+## Overview
 
-1. **Create a GitHub account** if you haven't already.
-2. Click the green **"Use as Template"** button in the upper right corner, then choose **"Create a new repository"**:  
-   a. Choose yourself as the owner  
-   b. Give your repository a name  
-   c. Click **"Create Repository"**
-3. Copy or download the files to your own computer.
-4. Open and edit the website using a text editor:
-   - Modify `index.html`, `style.css`, and `scripts.js`.
-   - To preview, open `index.html` in a web browser (double-click it).
-   - You should see something like this:
+This project is a catalog for a dog adoption website where users can:
 
-<img height="300" alt="Screenshot of catalog example" src="https://github.com/Snap-Engineering-Academy-2023/rn_lab1/assets/7607483/fdd57236-50fe-48ca-956d-d9b4b12db038">
+- View a list of dogs available for adoption and "adopt" one.
+- See which and how many dogs have been adopted.
+- Virtually “Pet” a dog by clicking a cute paw icon to mark it as a favorite.
+- Filter and sort the list of dogs based on various attributes(such as breed,
+  gender, vaccinated, and more).
+- Control how many items are shown on the page (with options such as 5, 10, 15,
+  or All) with an infinite scroll.
 
----
+## The UI is optimized for a 13-inch MacBook, as responsiveness for other screen sizes was not the primary focus.
 
-## 🚀 Submitting
+## Features
 
-1. **Publish your website to the internet!**  
-   We recommend using [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-your-site).
-2. **Test the published version.**  
-   Make sure everything works properly before submitting.
-3. **Update your GitHub repository** so it reflects the latest version of your project.
-4. **Submit** both:
-   - The **URL** to your published website
-   - The **link** to your GitHub repository  
-     …via the Google Form linked in your email.
+- **Filtering & Sorting:**
+  - Filter dogs by breed, gender, vaccination status, size, and age range.
+  - Sort dogs by name (ascending/descending), age (youngest/oldest), or days in
+    shelter.
+  - Inform users when their filter criteria return no results or if an age range
+    is invalid.
 
----
+- **Dynamic Display Options:**
+  - Initially, all available dogs are shown. However, the user can set to
+    Display 5, 10, or 15 dogs per view
 
-## ❓ Frequently Asked Questions (FAQ)
+- **Interactive UI:**
+  - Clicking the small paw icon next to a dog’s name toggles between an empty
+    and filled paw icon, marking the dog as “petted” (kinda like favorite
+    feature).
+  - Clicking “Adopt” moves the dog from the available list to the adopted list.
 
-### ❄️ Is it OK that my catalog resets when I refresh the page?
-
-**Yes!** That's exactly what the starter code does too. You don't need to worry about preserving data after a page refresh.
-
----
-
-### 💻 Can I copy bits of code from online resources?
-
-**Yes, absolutely!** You should search for and use **small chunks** of code.  
-For example:
-
-- ✅ Copying code to create a dropdown menu is fine.
-- ❌ Copying a full “filter data by date” feature is not.
-
-Be thoughtful about what you borrow!
+- **Real-time Counts & Navigation:**
+  - The navigation bar displays up-to-date counts for available and adopted
+    dogs.
 
 ---
 
-### 🤖 Can I use generative AI (like ChatGPT or Copilot)?
+## Dataset Edit & Modifications
 
-**Partially.**
+- I downloaded the original dataset from a Kaggle repository (🐾 Predict Pet Adoption Status
+  Dataset 🐾 by Rabie El Kharoua):
+  https://www.kaggle.com/datasets/rabieelkharoua/predict-pet-adoption-status-dataset/data
+- Note: This dataset was modified last 10 months ago (as of 04.14.2025)
 
-- ✅ You _may_ use AI tools to help write **HTML** and **CSS**.
-- ❌ You _may not_ use AI to write **JavaScript**.
+- **Modified:**
+  - Added a column `imageURL` (for now, the same images are used per breed).
+  - Images are generated using OpenAI's 4o models.
+  - Expanded the original dataset (which had only three breeds: Golden, Lab, and
+    Poodle) to include additional breeds such as Japanese Spitz, Pug, Boxer, and
+    Husky.
+  - Convert the age in months(in script.js) to years (by dividing by 12 and
+    truncating the result).
 
-HTML/CSS can be tricky to get right, and it's okay to get help making things look nice.  
-But JavaScript is where you show your own logic and understanding of data!
-
----
-
-### 🧰 Can I use a different template?
-
-**Nope!**  
-You must use the provided starter code, though you're free to customize it however you like.  
-You _can_ copy **small chunks** from other templates if needed.
-
----
-
-### 🛠️ Can I use a framework like React, Vue, Bootstrap, or Tailwind?
-
-**Nope!**  
-This project is for folks new to web dev. Frameworks do a lot of heavy lifting and hide the logic we're asking you to demonstrate.  
-SEA will teach you frameworks later—stick to **vanilla HTML, CSS, and JS** for now.
+- **Dataset Conversion:**\
+  The raw dataset (80+ records) was converted from CSV to JSON using
+  [csvjson.com](https://csvjson.com) and saved in a separate file
+  (`datasets.js`).
 
 ---
 
-### 🌐 Can I use APIs?
+## Why This Project?
 
-**Nope!**  
-APIs can add complexity beyond the scope of this challenge.  
-If you really want to use data from an API, **save it to a file** (like `.json` or `.csv`) and use that instead.
+I grew up in a place where stray dogs were everywhere and it left a lasting
+impact on me. I have always dreamed of helping abandoned dogs find loving homes
+since then. If I ever reach a point in life where I can do things without
+worrying about money, I would build shelters and create safe spaces where every
+dog can have a second chance.
+
+This catalog website reflects my dream and commitment to give stray dogs a
+second chance.
 
 ---
 
-> 💬 **Have any questions?** Drop them on the [Padlet here](https://padlet.com/arlenschallenge/2025-snap-engineering-academy-stage-2-project-assessment-que-ndmqkef3wxt8sh72) and we'll get back to you!
+## Some Learning Resources I Utilized To Build This Project
+
+- [MDN JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [JavaScript Sorting Tutorial (YouTube)](https://www.youtube.com/watch?v=yQ1fz8LY354)
+- [JavaScript Sorting Video](https://www.youtube.com/watch?v=w9078dAjcrY)
+
+---
+
+## Usage
+
+**Visit the website:**
+
+- Hosted with Github Page
+
+---
+
+## Feedback and Comments?
+
+**I would love to know what you thought of the website and how I can improve it
+in the future.**

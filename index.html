@@ -1,31 +1,137 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LA TV Shows | Home</title>
-    <meta name="description" content="A Catalog of Shows Set in Los Angeles" />
+    <title>Furever Home</title>
+
+    <link rel="icon" href="assets/icons/petted.png" type="image/x-icon" />
+
+    <meta name="description" content="Helping dogs find their forever homes." />
     <link rel="stylesheet" href="style.css" />
+    <script src="./dataset.js"></script>
     <script type="text/javascript" src="scripts.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <header class="main-header">
-      <h1 class="title">LA TV Shows</h1>
+      <h1 class="title">Furever Homes</h1>
     </header>
-    <div id="card-container"></div>
-    <div class="card" style="display: none">
-      <div class="card-content">
-        <h2>TV Show Title</h2>
-        <img src="" alt="TV Show Poster" />
-        <ul>
-          <li>Bullet Point 1</li>
-          <li>Bullet Point 2</li>
-          <li>Bullet Point 3</li>
-        </ul>
+
+    <nav class="main-nav">
+      <div class="nav-left">
+        <button class="up-for-adoption" onclick="displayUpForAdotionDogs()">Up for Adoption: <span class="noOfDogsCounts"></span></button>
+        <button class="adopted-button" onclick="displayAdoptedDogs()">Adopted: <span class="noOfAdoptedCounts"></span></button>
+      </div>
+      <div class="nav-right">
+        <span class="nav-petted-icon" onclick="displayPettedDogs()">
+          <img src="assets/icons/not-petted.png">
+        </span>
+        <span class="why-this-project" onclick="displayWoof()">
+          <img src="assets/icons/paws.png">
+        </span>
+      </div>
+    </nav>
+
+    <div class="page-heading-div">
+      <h2 class="page-heading-text"></h2>
+      <div class="sortAndFilterDiv">
+        <span class="dogsDisplayedMessage"></span> 
       </div>
     </div>
-    <div class="footer">
-      <button onclick="quoteAlert();">Get A Quote!</button>
-      <button onclick="removeLastCard();">Remove A Card!</button>
+
+    <div class="main-page-wrapper">
+      
+
+      <div id="filterSideNav" class="side-nav">
+        <div class="sortByDiv">
+          <h2>Sort By</h2>
+          <span class="sortedMessage"></span> 
+        </div>
+        <div class="sort-container">
+          <button class="aToZ" onclick="sortByNameAsc()">A-Z</button>
+          <button class="zToA" onclick="sortByNameDesc()">Z-A</button>
+          <button class="youngestSort" onclick="sortByYoungest()">Youngest</button>
+          <button class="oldestSort" onclick="sortByOldest()">Senior</button>
+          <button class="daysShelterSort" onclick="sortByDaysInShelter()">Days in Shelter</button>
+        </div>
+        <span class="clearSort" onclick="resetSort()">clear sort</span>
+        <div>
+          <label for="doggiesPerPage">Display: </label> 
+          <select id="doggiesPerPage" onchange="setDoggiesPerPage(this.value)">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option selected value="all">All</option>
+          </select>
+          <span>dogs</span>
+        </div>
+        
+        <h2>Filters</h2>
+        <div class="filter-container">
+          <form id="filterForm">
+            <label for="filterBreed">Breed:</label>
+            <select id="filterBreed">
+              <option value="">All Breeds</option>
+              <option value="Boxer">Boxer</option>
+              <option value="Golden Retriever">Golden Retriever</option>
+              <option value="Husky">Husky</option>
+              <option value="Japanese Spitz">Japanese Spitz</option>
+              <option value="Labrador">Labrador</option>
+              <option value="Poodle">Poodle</option>
+              <option value="Pug">Pug</option>
+            </select>
+
+            <label for="filterGender">Gender:</label>
+            <select id="filterGender">
+              <option value="">No Preference</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+
+            <label for="filterVaccinated">Vaccinated:</label>
+            <select id="filterVaccinated">
+              <option value="">No Preference</option>
+              <option value="0">No</option>
+              <option value="1">Yes</option>
+            </select>
+
+            <label for="filterSize">Size:</label>
+            <select id="filterSize">
+              <option value="">All Size</option>
+              <option value="Small">Small</option>
+              <option value="Medium">Medium</option>
+              <option value="Large">Large</option>
+            </select>
+
+            <label for="ageRange"> Age Range(0 - 14 in years):
+              <br>
+              <input type="number" value="" min="0" max="14" class="minAge"> </input>
+              <span> to </span>
+              <input type="number" min="0" max="14" class="maxAge"> </input>
+              <span>years</span>
+            </label>
+
+            <button type="button" onclick="applyFilters()">Apply Filters</button>
+            <button type="button" onclick="resetFilter()">Reset Filters</button>
+
+          </form>
+        </div>
+      </div> <div class="main-content-screen">
+        <div id="dogCard"></div>
+      </div> 
     </div>
+  
+    
+    <div class="footer">
+    <footer>
+      <div>
+        <p>Helping furry friends find their Furever Home</p>
+      </div>
+    </footer>
+    </div>
+  
   </body>
 </html>
