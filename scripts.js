@@ -21,7 +21,7 @@ let filters = {
 let itemsPerPage = 100; //#NOTE: because the number of dataset is less than 100 as of now so to display all elements, we can do 100 for now
 
 function setItemsPerPage(value) {
-  if (value !== "All") {
+  if (value !== "all") {
     itemsPerPage = parseInt(value);
   } else {
     itemsPerPage = 100; 
@@ -132,7 +132,7 @@ function displayAdoptedDogs() {
       <img src="${adoptedDog.image}" alt="${adoptedDog.name}">
       <h2>${adoptedDog.name}</h2>
       <p>Breed: ${adoptedDog.breed}</p>
-      <p>Age: ${adoptedDog.age}</p>
+      <p>Age: ${Math.trunc(adoptedDog.age / 12) >= 1 ? Math.trunc(adoptedDog.age/12) + " years" : adoptedDog.age + " months"}</p>
       <p>Gender: ${adoptedDog.gender}</p>
       <p>Size: ${adoptedDog.size}</p>
     `
@@ -166,7 +166,11 @@ function displayPettedDogs() {
     pettedDogCard.classList.add("dogCard")
     pettedDogCard.innerHTML = `
       <img src="${pettedDog.image}" alt="${pettedDog.name}">
-      <h2>${pettedDog.name}</h2>
+      <h2>${pettedDog.name} 
+        <span class="paw-icon" onclick="togglePetted(${pettedDog.id})"> 
+          <img src="${pettedDog.petted ? 'assets/icons/petted.png' : 'assets/icons/not-petted.png'}" alt="Paw Icon">
+        </span>
+      </h2>
       <p>Breed: ${pettedDog.breed}</p>
       <p>Age: ${Math.trunc(pettedDog.age / 12) >= 1 ? Math.trunc(pettedDog.age/12) + " years" : pettedDog.age + " months"}</p>
       <p>Gender: ${pettedDog.gender}</p>
@@ -254,7 +258,10 @@ function resetFilter() {
   document.getElementById('filterSize').value = "";
   document.querySelector('.minAge').value = "";
   document.querySelector('.maxAge').value = "";
+
+  document.getElementById("itemsPerPage").value = "all";
   itemsPerPage = 100;
+  
 
   sortButtonsColorReset();
 
@@ -285,6 +292,7 @@ function togglePetted(petID) {
     } 
   } else {  
     pettedDogs = pettedDogs.filter((dog) => dog.id !== petID); //"unpet the dog" :( filters the dogID that doesn't match the unpetted dog
+    alert(`You un-petted ${dog.name}.`)
   }
 
   // console.log(pettedDogs); //for testing purpose: #DISPLAYS CORRECT INFORMATION
@@ -347,7 +355,7 @@ function sortByDaysInShelter() {
 }
 
 function displayWoof() { 
-  alert("This is just a mock-up adoption website. All images are AI-generated using OpenAI's 4o models, and the dog details are inspired from a Kaggle's dataset.");
+  alert("This is just a mock-up adoption website. All images are AI-generated using OpenAI's 4o image genearting model, and the dog details are inspired from a Kaggle's dataset.");
 }
 // //DOMContentLoaded means the webpage is loaded and .addEventListener will call displayDogs function when the page is loaded is loaded
 document.addEventListener("DOMContentLoaded", function() { 
