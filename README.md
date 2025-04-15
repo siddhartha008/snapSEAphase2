@@ -106,7 +106,7 @@ second chance.
 
 ## Usage
 
-**Visit the website:**
+**Visit the website: https://siddhartha008.github.io/snapSEAphase2/**
 
 - Hosted with Github Page
 
