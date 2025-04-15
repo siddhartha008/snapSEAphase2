@@ -5,7 +5,7 @@ let pettedDogs = [] //list of dogs that are virtually petted: initially empty
 let upForAdoptionDogsCount = dogsForAdoption.length; //number of dogs available for adoption
 let adoptedDogsCount = dogsAdopted.length; //number of adopted dogs: initially 0.
 
-
+let sorted = false;
 
 //default filters to display all the dogs from the list initially
 let filters = {
@@ -18,13 +18,15 @@ let filters = {
 };
 
 //displaying logic and variables
-let itemsPerPage = 100; //#NOTE: because the number of dataset is less than 100 as of now so to display all elements, we can do 100 for now
+let doggiesPerPage = upForAdoptionDogsCount; //#NOTE: because the number of dataset is less than 100 as of now so to display all elements, we can do 100 for now
 
-function setItemsPerPage(value) {
+function setDoggiesPerPage(value) {
   if (value !== "all") {
-    itemsPerPage = parseInt(value);
+    doggiesPerPage = parseInt(value);
+    document.querySelector(".dogsDisplayedMessage").textContent =  `${doggiesPerPage} dogs displayed`;
+    displayUpForAdotionDogs();
   } else {
-    itemsPerPage = 100; 
+    doggiesPerPage = upForAdoptionDogsCount; 
     randomOrderDisplay();
   }
   displayUpForAdotionDogs();
@@ -48,7 +50,8 @@ function displayUpForAdotionDogs () {
   const dogsForAdoption = generateFilteredDogs();
 
   //to show only certain number of dogs per page
-  const visibleDogs = dogsForAdoption.splice(0, itemsPerPage);
+  const visibleDogs = dogsForAdoption.splice(0, doggiesPerPage);
+
 
   if (visibleDogs.length === 0) {
     dogCards.innerHTML = "<p>No dogs match your current filter criteria.</p>";
@@ -71,7 +74,7 @@ function displayUpForAdotionDogs () {
       <p><strong>Age</strong>: ${Math.trunc(cuteDog.age / 12) >= 1 ? Math.trunc(cuteDog.age/12) + " years" : cuteDog.age + " months"}</p>
       <p><strong>Gender:</strong> ${cuteDog.gender}</p>
       <p><strong>Size</strong>: ${cuteDog.size}</p>
-      <p><strong>Vaccinated</strong>: ${cuteDog.vaccinated == 0 ? 'Yes' : 'No'} </p>
+      <p><strong>Vaccinated</strong>: ${cuteDog.vaccinated == 0 ? 'No' : 'Yes'} </p>
       <p><strong>Looking for a home since</strong>: ${cuteDog.daysInShelter} days</p>
       <button class="adopt-${cuteDog.name}" onclick="adoptDog(${cuteDog.id})">Adopt</button>
     `
@@ -102,6 +105,7 @@ function adoptDog(adoptedDogId)
   displayUpForAdotionDogs();
 }
 
+
 ////"second-page": with all the dogs adopted from the "main-page"
 function displayAdoptedDogs() {
   document.querySelector(".adopted-button").style.backgroundColor = "#946b45";
@@ -111,7 +115,8 @@ function displayAdoptedDogs() {
   
   document.querySelector(".page-heading-text").textContent = "Adopted Furry Friends"
   document.querySelector(".noOfAdoptedCounts").textContent = dogsAdopted.length;
-  
+  document.querySelector(".dogsDisplayedMessage").textContent =  `${adoptedDogsCount < 2 ? `${adoptedDogsCount} dog adopted` : `${adoptedDogsCount} dogs adopted`}`;
+
   // console.log("ADOPTED button pressed from HTML") //debug purpose: WORKS 
   const dogCards = document.getElementById("dogCard")
   dogCards.innerHTML = ""; 
@@ -142,12 +147,14 @@ function displayAdoptedDogs() {
 
 //"petted-page": displays petted(kinda favorited) and their adoption status. 
 function displayPettedDogs() {
+  let pettedDogsCount = pettedDogs.length;
   document.querySelector(".adopted-button").style.backgroundColor = "";
   document.querySelector(".up-for-adoption").style.backgroundColor = "";
   document.querySelector(".nav-petted-icon img").src = "assets/icons/petted.png";
   document.querySelector(".side-nav").classList.add("hidden"); //not showing sort and filter for petted page
-  
+
   document.querySelector(".page-heading-text").textContent = "Pet-ed dogs"
+  document.querySelector(".dogsDisplayedMessage").textContent =  `${pettedDogsCount < 2 ? `${pettedDogsCount} dog petted` : `${pettedDogsCount} dogs petted`}`;
   
   console.log("PAWS icons button pressed from HTML")
   const dogCards = document.getElementById("dogCard")
@@ -239,6 +246,10 @@ function generateFilteredDogs() {
       }
     )}
   }
+
+  const filteredDogsLength = filteredDogs.length; 
+  document.querySelector(".dogsDisplayedMessage").textContent =  `${filteredDogsLength > 1 ? `${filteredDogsLength} dogs up for adoption` : `${filteredDogsLength} dog up for adoption`}`
+
   return filteredDogs; 
 }
 
@@ -258,9 +269,12 @@ function resetFilter() {
   document.getElementById('filterSize').value = "";
   document.querySelector('.minAge').value = "";
   document.querySelector('.maxAge').value = "";
+  document.querySelector('.sortedMessage').textContent = "";
 
-  document.getElementById("itemsPerPage").value = "all";
-  itemsPerPage = 100;
+  sorted = false;
+
+  document.getElementById("doggiesPerPage").value = "all";
+  doggiesPerPage = upForAdoptionDogsCount;
   
 
   sortButtonsColorReset();
@@ -278,6 +292,7 @@ function resetFilter() {
   displayUpForAdotionDogs();
 }
 
+//petting the dog virtually feature
 function togglePetted(petID) { 
   let dog = dogsForAdoption.find((dog) => dog.id === petID);
   if (!dog) { 
@@ -303,60 +318,85 @@ function togglePetted(petID) {
 //sorting and filter using .sort() and comparefn 
 function sortByNameAsc() { 
   sortButtonsColorReset();
+  sorted = true;
   document.querySelector('.aToZ').style.backgroundColor = "#946b45";
   dogsForAdoption.sort(
     function(a,b) { 
     return a.name.localeCompare(b.name);
   })
+  document.querySelector('.sortedMessage').textContent = "A-Z sorted";
   displayUpForAdotionDogs();
 }
 
 function sortByNameDesc() { 
   sortButtonsColorReset();
+  sorted = true;
   document.querySelector('.zToA').style.backgroundColor = "#946b45";
   dogsForAdoption.sort(
     function(a,b) { 
     return b.name.localeCompare(a.name);
   })
+  document.querySelector('.sortedMessage').textContent = "Z-A sorted";
   displayUpForAdotionDogs();
 }
 
 function sortByYoungest() { 
   sortButtonsColorReset();
+  sorted = true;
   document.querySelector('.youngestSort').style.backgroundColor = "#946b45";
   dogsForAdoption.sort(
     function(a,b) { 
       return a.age - b.age;
     }
   )
+  document.querySelector('.sortedMessage').textContent = "Youngest to Senior Dogs Sorted";
   displayUpForAdotionDogs();
 }
 
 function sortByOldest() { 
   sortButtonsColorReset();
+  sorted = true;
   document.querySelector('.oldestSort').style.backgroundColor = "#946b45";
   dogsForAdoption.sort(
     function(a,b) {
       return b.age-a.age;
     }
   )
+  document.querySelector('.sortedMessage').textContent = "Senior to Youngest Dogs Sorted";
   displayUpForAdotionDogs();
 }
 
 function sortByDaysInShelter() {
   sortButtonsColorReset();
+  sorted = true;
   document.querySelector('.daysShelterSort').style.backgroundColor = "#946b45"; 
   dogsForAdoption.sort(
     function(a,b) { 
       return b.daysInShelter - a.daysInShelter;
     }
   )
+  document.querySelector('.sortedMessage').textContent = "Longest Days in Shelter Sorted";
   displayUpForAdotionDogs();
 }
 
+//to make the clear search button functional
+function resetSort() { 
+  document.querySelector('.sortedMessage').textContent = "";
+  sortButtonsColorReset();
+  if(sorted) {
+    randomOrderDisplay(); 
+  } else { 
+    alert("Already un-sorted.");
+  }
+  sorted = false;
+  displayUpForAdotionDogs();
+}
+
+//just a fun little note and feature to the user
 function displayWoof() { 
   alert("This is just a mock-up adoption website. All images are AI-generated using OpenAI's 4o image genearting model, and the dog details are inspired from a Kaggle's dataset.");
 }
+
 // //DOMContentLoaded means the webpage is loaded and .addEventListener will call displayDogs function when the page is loaded is loaded
 document.addEventListener("DOMContentLoaded", function() { 
   window.scrollTo({top: 10, behavior: "smooth"});
