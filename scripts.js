@@ -2,8 +2,10 @@ let dogsForAdoption = dogs;
 let dogsAdopted = [] //list of dogs that are adopted: initially empty
 let pettedDogs = [] //list of dogs that are virtually petted: initially empty
 
-let upForAdoptionDogsCount = dogsForAdoption.length;
-let adoptedDogsCount = dogsAdopted.length;
+let upForAdoptionDogsCount = dogsForAdoption.length; //number of dogs available for adoption
+let adoptedDogsCount = dogsAdopted.length; //number of adopted dogs: initially 0.
+
+
 
 //default filters to display all the dogs from the list initially
 let filters = {
@@ -28,6 +30,7 @@ function setItemsPerPage(value) {
   displayUpForAdotionDogs();
 }
 
+//"main-page": with all the dogs available for adoption listed
 function displayUpForAdotionDogs () {
   document.querySelector(".up-for-adoption").style.backgroundColor = "#946b45";
   document.querySelector(".adopted-button").style.backgroundColor = "";
@@ -76,13 +79,14 @@ function displayUpForAdotionDogs () {
   })
 }
 
-//adopting a dog and updating the new list
+//adopting a dog and updating both the upForAdoption and adoptedDogs list
 function adoptDog(adoptedDogId) 
 { 
   // console.log(dogId);
   let adoptedDog;  
   dogsForAdoption.forEach((cuteDog) => { 
     if(cuteDog.id === adoptedDogId) {
+      cuteDog.isAdopted = true;
       adoptedDog = cuteDog; 
       const indexOfAdoptedDog = dogsForAdoption.indexOf(cuteDog); 
       dogsForAdoption.splice(indexOfAdoptedDog, 1); //splice removes the adopted dog from the dogsForAdopton list. 1 incidiates remove only one element (itself) from the index
@@ -98,6 +102,7 @@ function adoptDog(adoptedDogId)
   displayUpForAdotionDogs();
 }
 
+////"second-page": with all the dogs adopted from the "main-page"
 function displayAdoptedDogs() {
   document.querySelector(".adopted-button").style.backgroundColor = "#946b45";
   document.querySelector(".up-for-adoption").style.backgroundColor = "";
@@ -107,7 +112,7 @@ function displayAdoptedDogs() {
   document.querySelector(".page-heading-text").textContent = "Adopted Furry Friends"
   document.querySelector(".noOfAdoptedCounts").textContent = dogsAdopted.length;
   
-  console.log("ADOPTED button pressed from HTML")
+  // console.log("ADOPTED button pressed from HTML") //debug purpose: WORKS 
   const dogCards = document.getElementById("dogCard")
   dogCards.innerHTML = ""; 
   console.log(dogsAdopted);
@@ -135,6 +140,7 @@ function displayAdoptedDogs() {
   })
 }
 
+//"petted-page": displays petted(kinda favorited) and their adoption status. 
 function displayPettedDogs() {
   document.querySelector(".adopted-button").style.backgroundColor = "";
   document.querySelector(".up-for-adoption").style.backgroundColor = "";
@@ -155,9 +161,9 @@ function displayPettedDogs() {
   }
   
   pettedDogs.forEach((pettedDog) => { 
+
     const pettedDogCard = document.createElement("div")
     pettedDogCard.classList.add("dogCard")
-
     pettedDogCard.innerHTML = `
       <img src="${pettedDog.image}" alt="${pettedDog.name}">
       <h2>${pettedDog.name}</h2>
@@ -165,6 +171,7 @@ function displayPettedDogs() {
       <p>Age: ${Math.trunc(pettedDog.age / 12) >= 1 ? Math.trunc(pettedDog.age/12) + " years" : pettedDog.age + " months"}</p>
       <p>Gender: ${pettedDog.gender}</p>
       <p>Size: ${pettedDog.size}</p>
+      ${!pettedDog.isAdopted ? `<button class="adopt-${pettedDog.name}" onclick="adoptDog(${pettedDog.id})">Adopt</button>` : `<p>Found a furever home already <3</p>`}
     `
     dogCards.appendChild(pettedDogCard);
   })
@@ -231,6 +238,7 @@ function generateFilteredDogs() {
   return filteredDogs; 
 }
 
+//when resetButton clicked, the buttons bg will also reset to default
 function sortButtonsColorReset() { 
   document.querySelector('.aToZ').style.backgroundColor = "";
   document.querySelector('.zToA').style.backgroundColor = "";
@@ -338,20 +346,12 @@ function sortByDaysInShelter() {
   displayUpForAdotionDogs();
 }
 
-function toggleInfoPopup() { 
-  let popUpElement = document.getElementById('info-popup');
-  if(popUpElement.style.display == "block") { 
-    popUpElement.style.display == "none"; 
-  } else { 
-    popUpElement.style.display == "none";
-  }
-}
-
 function displayWoof() { 
-  alert("This is not an official adoption website. All images are AI-generated using OpenAI's 4o models, and the dog details are inspired from a Kaggle's dataset.");
+  alert("This is just a mock-up adoption website. All images are AI-generated using OpenAI's 4o models, and the dog details are inspired from a Kaggle's dataset.");
 }
 // //DOMContentLoaded means the webpage is loaded and .addEventListener will call displayDogs function when the page is loaded is loaded
 document.addEventListener("DOMContentLoaded", function() { 
+  window.scrollTo({top: 10, behavior: "smooth"});
   randomOrderDisplay(); //display the list in random order initially
   displayUpForAdotionDogs();
 });

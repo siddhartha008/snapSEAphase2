@@ -1,86 +1,86 @@
-id,PetType,name,breed,age,gender,size,vaccinated,daysInShelter,isPetted,image
-101010,Dog,Aloo,Golden Retriever,136,Male,Medium,0,85,FALSE,./assets/dogsImages/golden.png
-101011,Dog,Pickle,Golden Retriever,172,Male,Large,1,4,FALSE,./assets/dogsImages/golden.png
-101012,Dog,Oreo,Golden Retriever,86,Female,Small,1,30,FALSE,./assets/dogsImages/golden.png
-101013,Dog,Butters,Golden Retriever,31,Female,Medium,1,1,FALSE,./assets/dogsImages/golden.png
-101014,Dog,Pup0090,Golden Retriever,47,Male,Medium,0,22,FALSE,./assets/dogsImages/golden.png
-101015,Dog,Drift,Golden Retriever,23,Male,Small,1,63,FALSE,./assets/dogsImages/golden.png
-101016,Dog,Toast,Pug,77,Male,Medium,1,73,FALSE,./assets/dogsImages/pug.png
-101017,Dog,Snickers,Pug,118,Male,Medium,1,30,FALSE,./assets/dogsImages/pug.png
-101018,Dog,Snowy,Pug,4,Male,Medium,0,13,FALSE,./assets/dogsImages/pug.png
-101019,Dog,Sprout,Pug,108,Male,Medium,1,84,FALSE,./assets/dogsImages/pug.png
-101020,Dog,Noodle,Pug,141,Female,Medium,0,83,FALSE,./assets/dogsImages/pug.png
-101021,Dog,Pup1234,Pug,121,Female,Medium,0,40,FALSE,./assets/dogsImages/pug.png
-101022,Dog,Bean,Pug,93,Male,Small,1,88,FALSE,./assets/dogsImages/pug.png
-101023,Dog,Pebble,Husky,67,Male,Large,1,5,FALSE,./assets/dogsImages/husky.png
-101024,Dog,Bolt,Husky,57,Female,Large,1,62,FALSE,./assets/dogsImages/husky.png
-101025,Dog,Cotton,Husky,138,Male,Small,0,18,FALSE,./assets/dogsImages/husky.png
-101026,Dog,Swirl,Husky,30,Male,Medium,1,65,FALSE,./assets/dogsImages/husky.png
-101027,Dog,Katsu,Husky,31,Female,Medium,0,19,FALSE,./assets/dogsImages/husky.png
-101028,Dog,Marshmallow,Husky,170,Female,Small,0,49,FALSE,./assets/dogsImages/husky.png
-101029,Dog,Puff,Husky,153,Male,Medium,1,81,FALSE,./assets/dogsImages/husky.png
-101030,Dog,Storm,Husky,123,Male,Large,1,77,FALSE,./assets/dogsImages/husky.png
-101031,Dog,Echo,Husky,81,Male,Large,0,37,FALSE,./assets/dogsImages/husky.png
-101032,Dog,Churro,Husky,175,Female,Small,0,64,FALSE,./assets/dogsImages/husky.png
-101033,Dog,Doodle,Husky,157,Female,Small,0,50,FALSE,./assets/dogsImages/husky.png
-101034,Dog,Curly,Husky,83,Male,Small,0,15,FALSE,./assets/dogsImages/husky.png
-101035,Dog,Maple,Husky,120,Male,Small,1,53,FALSE,./assets/dogsImages/husky.png
-101036,Dog,Waffles,Labrador,70,Female,Large,0,87,FALSE,./assets/dogsImages/lab.png
-101037,Dog,Dumpling,Labrador,44,Female,Small,0,6,FALSE,./assets/dogsImages/lab.png
-101038,Dog,Blizzard,Labrador,3,Male,Large,1,50,FALSE,./assets/dogsImages/lab.png
-101039,Dog,Rumble,Labrador,106,Male,Medium,0,79,FALSE,./assets/dogsImages/lab.png
-101040,Dog,Champ,Labrador,105,Female,Medium,1,30,FALSE,./assets/dogsImages/lab.png
-101041,Dog,Chip,Labrador,75,Male,Medium,1,7,FALSE,./assets/dogsImages/lab.png
-101042,Dog,Tofu,Labrador,67,Male,Medium,1,34,FALSE,./assets/dogsImages/lab.png
-101043,Dog,Sunny,Labrador,154,Female,Small,1,39,FALSE,./assets/dogsImages/lab.png
-101044,Dog,Mocha,Labrador,6,Female,Small,1,43,FALSE,./assets/dogsImages/lab.png
-101045,Dog,Pup0351,Labrador,91,Male,Large,1,86,FALSE,./assets/dogsImages/lab.png
-101046,Dog,Pup1130,Labrador,110,Male,Medium,0,82,FALSE,./assets/dogsImages/lab.png
-101047,Dog,Pup738,Labrador,141,Male,Large,1,88,FALSE,./assets/dogsImages/lab.png
-101048,Dog,Pup819,Labrador,12,Male,Large,1,17,FALSE,./assets/dogsImages/lab.png
-101049,Dog,Pup204,Labrador,93,Male,Small,1,51,FALSE,./assets/dogsImages/lab.png
-101050,Dog,Pup0057,Japanese Spitz,151,Female,Small,0,19,FALSE,./assets/dogsImages/jspitz.png
-101051,Dog,Nugget,Japanese Spitz,97,Female,Small,1,27,FALSE,./assets/dogsImages/jspitz.png
-101052,Dog,Dash,Japanese Spitz,101,Male,Small,1,61,FALSE,./assets/dogsImages/jspitz.png
-101053,Dog,Jelly,Japanese Spitz,109,Male,Large,0,89,FALSE,./assets/dogsImages/jspitz.png
-101054,Dog,Muffin,Japanese Spitz,152,Female,Medium,0,50,FALSE,./assets/dogsImages/jspitz.png
-101055,Dog,Honey,Japanese Spitz,139,Female,Medium,1,55,FALSE,./assets/dogsImages/jspitz.png
-101056,Dog,Miso,Japanese Spitz,153,Male,Large,1,23,FALSE,./assets/dogsImages/jspitz.png
-101057,Dog,Sesame,Japanese Spitz,68,Male,Large,0,22,FALSE,./assets/dogsImages/jspitz.png
-101058,Dog,Pup7612,Japanese Spitz,10,Male,Small,0,31,FALSE,./assets/dogsImages/jspitz.png
-101059,Dog,Pup3084,Japanese Spitz,164,Female,Small,0,45,FALSE,./assets/dogsImages/jspitz.png
-101060,Dog,Pup8307,Japanese Spitz,160,Female,Medium,1,87,FALSE,./assets/dogsImages/jspitz.png
-101061,Dog,Pup8290,Japanese Spitz,172,Male,Medium,1,38,FALSE,./assets/dogsImages/jspitz.png
-101062,Dog,Pup3727,Japanese Spitz,12,Male,Medium,0,8,FALSE,./assets/dogsImages/jspitz.png
-101063,Dog,Pup8810,Boxer,55,Female,Large,1,48,FALSE,./assets/dogsImages/boxer.png
-101064,Dog,Pup3956,Boxer,124,Male,Small,1,7,FALSE,./assets/dogsImages/boxer.png
-101065,Dog,Pup5337,Boxer,155,Male,Medium,0,21,FALSE,./assets/dogsImages/boxer.png
-101066,Dog,Taraa,Boxer,87,Female,Large,0,10,FALSE,./assets/dogsImages/boxer.png
-101067,Dog,Pup7780,Boxer,113,Female,Small,1,70,FALSE,./assets/dogsImages/boxer.png
-101068,Dog,Jaado,Boxer,119,Male,Medium,1,67,FALSE,./assets/dogsImages/boxer.png
-101069,Dog,Pup6988,Boxer,18,Male,Medium,0,40,FALSE,./assets/dogsImages/boxer.png
-101070,Dog,Pup8261,Boxer,89,Male,Large,1,78,FALSE,./assets/dogsImages/boxer.png
-101071,Dog,Pup4940,Boxer,2,Male,Large,0,66,FALSE,./assets/dogsImages/boxer.png
-101072,Dog,Randy,Boxer,39,Female,Small,1,67,FALSE,./assets/dogsImages/boxer.png
-101073,Dog,Pumper,Boxer,3,Female,Medium,1,89,FALSE,./assets/dogsImages/boxer.png
-101074,Dog,Pup5177,Boxer,169,Male,Large,1,66,FALSE,./assets/dogsImages/boxer.png
-101075,Dog,Pup3145,Boxer,90,Male,Medium,1,9,FALSE,./assets/dogsImages/boxer.png
-101076,Dog,Pup2220,Boxer,14,Female,Small,1,14,FALSE,./assets/dogsImages/boxer.png
-101077,Dog,Hachi,Boxer,121,Male,Small,1,24,FALSE,./assets/dogsImages/boxer.png
-101078,Dog,Pup5704,Boxer,70,Male,Large,1,51,FALSE,./assets/dogsImages/boxer.png
-101079,Dog,Pup1651,Boxer,147,Female,Medium,1,46,FALSE,./assets/dogsImages/boxer.png
-101080,Dog,Pup8754,Boxer,63,Male,Small,1,16,FALSE,./assets/dogsImages/boxer.png
-101081,Dog,Roti,Poodle,86,Male,Small,1,67,FALSE,./assets/dogsImages/poodle.png
-101082,Dog,Pup5710,Poodle,58,Male,Large,0,19,FALSE,./assets/dogsImages/poodle.png
-101083,Dog,Pup1497,Poodle,81,Male,Small,0,75,FALSE,./assets/dogsImages/poodle.png
-101084,Dog,Pup2368,Poodle,127,Male,Small,0,45,FALSE,./assets/dogsImages/poodle.png
-101085,Dog,Pup3405,Poodle,167,Male,Medium,0,58,FALSE,./assets/dogsImages/poodle.png
-101086,Dog,Maya,Poodle,126,Male,Large,1,36,FALSE,./assets/dogsImages/poodle.png
-101087,Dog,Chiya,Poodle,84,Male,Medium,1,66,FALSE,./assets/dogsImages/poodle.png
-101088,Dog,Pup2803,Poodle,49,Male,Medium,1,64,FALSE,./assets/dogsImages/poodle.png
-101089,Dog,Pup2441,Poodle,112,Male,Small,0,18,FALSE,./assets/dogsImages/poodle.png
-101090,Dog,Pup7329,Poodle,81,Male,Small,1,17,FALSE,./assets/dogsImages/poodle.png
-101091,Dog,Pup8672,Poodle,96,Female,Large,1,60,FALSE,./assets/dogsImages/poodle.png
-101092,Dog,Buddu,Poodle,146,Female,Small,0,64,FALSE,./assets/dogsImages/poodle.png
-101093,Dog,Nemo,Poodle,172,Male,Large,1,36,FALSE,./assets/dogsImages/poodle.png
-101094,Dog,Pup6035,Poodle,72,Male,Small,1,66,FALSE,./assets/dogsImages/poodle.png
+id,PetType,name,breed,age,gender,size,vaccinated,daysInShelter,isAdopted,isPetted,image
+101010,Dog,Aloo,Golden Retriever,136,Male,Medium,0,85,FALSE,FALSE,./assets/dogsImages/golden.png
+101011,Dog,Pickle,Golden Retriever,172,Male,Large,1,4,FALSE,FALSE,./assets/dogsImages/golden.png
+101012,Dog,Oreo,Golden Retriever,86,Female,Small,1,30,FALSE,FALSE,./assets/dogsImages/golden.png
+101013,Dog,Butters,Golden Retriever,31,Female,Medium,1,1,FALSE,FALSE,./assets/dogsImages/golden.png
+101014,Dog,Pup0090,Golden Retriever,47,Male,Medium,0,22,FALSE,FALSE,./assets/dogsImages/golden.png
+101015,Dog,Drift,Golden Retriever,23,Male,Small,1,63,FALSE,FALSE,./assets/dogsImages/golden.png
+101016,Dog,Toast,Pug,77,Male,Medium,1,73,FALSE,FALSE,./assets/dogsImages/pug.png
+101017,Dog,Snickers,Pug,118,Male,Medium,1,30,FALSE,FALSE,./assets/dogsImages/pug.png
+101018,Dog,Snowy,Pug,4,Male,Medium,0,13,FALSE,FALSE,./assets/dogsImages/pug.png
+101019,Dog,Sprout,Pug,108,Male,Medium,1,84,FALSE,FALSE,./assets/dogsImages/pug.png
+101020,Dog,Noodle,Pug,141,Female,Medium,0,83,FALSE,FALSE,./assets/dogsImages/pug.png
+101021,Dog,Pup1234,Pug,121,Female,Medium,0,40,FALSE,FALSE,./assets/dogsImages/pug.png
+101022,Dog,Bean,Pug,93,Male,Small,1,88,FALSE,FALSE,./assets/dogsImages/pug.png
+101023,Dog,Pebble,Husky,67,Male,Large,1,5,FALSE,FALSE,./assets/dogsImages/husky.png
+101024,Dog,Bolt,Husky,57,Female,Large,1,62,FALSE,FALSE,./assets/dogsImages/husky.png
+101025,Dog,Cotton,Husky,138,Male,Small,0,18,FALSE,FALSE,./assets/dogsImages/husky.png
+101026,Dog,Swirl,Husky,30,Male,Medium,1,65,FALSE,FALSE,./assets/dogsImages/husky.png
+101027,Dog,Katsu,Husky,31,Female,Medium,0,19,FALSE,FALSE,./assets/dogsImages/husky.png
+101028,Dog,Marshmallow,Husky,170,Female,Small,0,49,FALSE,FALSE,./assets/dogsImages/husky.png
+101029,Dog,Puff,Husky,153,Male,Medium,1,81,FALSE,FALSE,./assets/dogsImages/husky.png
+101030,Dog,Storm,Husky,123,Male,Large,1,77,FALSE,FALSE,./assets/dogsImages/husky.png
+101031,Dog,Echo,Husky,81,Male,Large,0,37,FALSE,FALSE,./assets/dogsImages/husky.png
+101032,Dog,Churro,Husky,175,Female,Small,0,64,FALSE,FALSE,./assets/dogsImages/husky.png
+101033,Dog,Doodle,Husky,157,Female,Small,0,50,FALSE,FALSE,./assets/dogsImages/husky.png
+101034,Dog,Curly,Husky,83,Male,Small,0,15,FALSE,FALSE,./assets/dogsImages/husky.png
+101035,Dog,Maple,Husky,120,Male,Small,1,53,FALSE,FALSE,./assets/dogsImages/husky.png
+101036,Dog,Waffles,Labrador,70,Female,Large,0,87,FALSE,FALSE,./assets/dogsImages/lab.png
+101037,Dog,Dumpling,Labrador,44,Female,Small,0,6,FALSE,FALSE,./assets/dogsImages/lab.png
+101038,Dog,Blizzard,Labrador,3,Male,Large,1,50,FALSE,FALSE,./assets/dogsImages/lab.png
+101039,Dog,Rumble,Labrador,106,Male,Medium,0,79,FALSE,FALSE,./assets/dogsImages/lab.png
+101040,Dog,Champ,Labrador,105,Female,Medium,1,30,FALSE,FALSE,./assets/dogsImages/lab.png
+101041,Dog,Chip,Labrador,75,Male,Medium,1,7,FALSE,FALSE,./assets/dogsImages/lab.png
+101042,Dog,Tofu,Labrador,67,Male,Medium,1,34,FALSE,FALSE,./assets/dogsImages/lab.png
+101043,Dog,Sunny,Labrador,154,Female,Small,1,39,FALSE,FALSE,./assets/dogsImages/lab.png
+101044,Dog,Mocha,Labrador,6,Female,Small,1,43,FALSE,FALSE,./assets/dogsImages/lab.png
+101045,Dog,Pup0351,Labrador,91,Male,Large,1,86,FALSE,FALSE,./assets/dogsImages/lab.png
+101046,Dog,Pup1130,Labrador,110,Male,Medium,0,82,FALSE,FALSE,./assets/dogsImages/lab.png
+101047,Dog,Pup738,Labrador,141,Male,Large,1,88,FALSE,FALSE,./assets/dogsImages/lab.png
+101048,Dog,Pup819,Labrador,12,Male,Large,1,17,FALSE,FALSE,./assets/dogsImages/lab.png
+101049,Dog,Pup204,Labrador,93,Male,Small,1,51,FALSE,FALSE,./assets/dogsImages/lab.png
+101050,Dog,Pup0057,Japanese Spitz,151,Female,Small,0,19,FALSE,FALSE,./assets/dogsImages/jspitz.png
+101051,Dog,Nugget,Japanese Spitz,97,Female,Small,1,27,FALSE,FALSE,./assets/dogsImages/jspitz.png
+101052,Dog,Dash,Japanese Spitz,101,Male,Small,1,61,FALSE,FALSE,./assets/dogsImages/jspitz.png
+101053,Dog,Jelly,Japanese Spitz,109,Male,Large,0,89,FALSE,FALSE,./assets/dogsImages/jspitz.png
+101054,Dog,Muffin,Japanese Spitz,152,Female,Medium,0,50,FALSE,FALSE,./assets/dogsImages/jspitz.png
+101055,Dog,Honey,Japanese Spitz,139,Female,Medium,1,55,FALSE,FALSE,./assets/dogsImages/jspitz.png
+101056,Dog,Miso,Japanese Spitz,153,Male,Large,1,23,FALSE,FALSE,./assets/dogsImages/jspitz.png
+101057,Dog,Sesame,Japanese Spitz,68,Male,Large,0,22,FALSE,FALSE,./assets/dogsImages/jspitz.png
+101058,Dog,Pup7612,Japanese Spitz,10,Male,Small,0,31,FALSE,FALSE,./assets/dogsImages/jspitz.png
+101059,Dog,Pup3084,Japanese Spitz,164,Female,Small,0,45,FALSE,FALSE,./assets/dogsImages/jspitz.png
+101060,Dog,Pup8307,Japanese Spitz,160,Female,Medium,1,87,FALSE,FALSE,./assets/dogsImages/jspitz.png
+101061,Dog,Pup8290,Japanese Spitz,172,Male,Medium,1,38,FALSE,FALSE,./assets/dogsImages/jspitz.png
+101062,Dog,Pup3727,Japanese Spitz,12,Male,Medium,0,8,FALSE,FALSE,./assets/dogsImages/jspitz.png
+101063,Dog,Pup8810,Boxer,55,Female,Large,1,48,FALSE,FALSE,./assets/dogsImages/boxer.png
+101064,Dog,Pup3956,Boxer,124,Male,Small,1,7,FALSE,FALSE,./assets/dogsImages/boxer.png
+101065,Dog,Pup5337,Boxer,155,Male,Medium,0,21,FALSE,FALSE,./assets/dogsImages/boxer.png
+101066,Dog,Taraa,Boxer,87,Female,Large,0,10,FALSE,FALSE,./assets/dogsImages/boxer.png
+101067,Dog,Pup7780,Boxer,113,Female,Small,1,70,FALSE,FALSE,./assets/dogsImages/boxer.png
+101068,Dog,Jaado,Boxer,119,Male,Medium,1,67,FALSE,FALSE,./assets/dogsImages/boxer.png
+101069,Dog,Pup6988,Boxer,18,Male,Medium,0,40,FALSE,FALSE,./assets/dogsImages/boxer.png
+101070,Dog,Pup8261,Boxer,89,Male,Large,1,78,FALSE,FALSE,./assets/dogsImages/boxer.png
+101071,Dog,Pup4940,Boxer,2,Male,Large,0,66,FALSE,FALSE,./assets/dogsImages/boxer.png
+101072,Dog,Randy,Boxer,39,Female,Small,1,67,FALSE,FALSE,./assets/dogsImages/boxer.png
+101073,Dog,Pumper,Boxer,3,Female,Medium,1,89,FALSE,FALSE,./assets/dogsImages/boxer.png
+101074,Dog,Pup5177,Boxer,169,Male,Large,1,66,FALSE,FALSE,./assets/dogsImages/boxer.png
+101075,Dog,Pup3145,Boxer,90,Male,Medium,1,9,FALSE,FALSE,./assets/dogsImages/boxer.png
+101076,Dog,Pup2220,Boxer,14,Female,Small,1,14,FALSE,FALSE,./assets/dogsImages/boxer.png
+101077,Dog,Hachi,Boxer,121,Male,Small,1,24,FALSE,FALSE,./assets/dogsImages/boxer.png
+101078,Dog,Pup5704,Boxer,70,Male,Large,1,51,FALSE,FALSE,./assets/dogsImages/boxer.png
+101079,Dog,Pup1651,Boxer,147,Female,Medium,1,46,FALSE,FALSE,./assets/dogsImages/boxer.png
+101080,Dog,Pup8754,Boxer,63,Male,Small,1,16,FALSE,FALSE,./assets/dogsImages/boxer.png
+101081,Dog,Roti,Poodle,86,Male,Small,1,67,FALSE,FALSE,./assets/dogsImages/poodle.png
+101082,Dog,Pup5710,Poodle,58,Male,Large,0,19,FALSE,FALSE,./assets/dogsImages/poodle.png
+101083,Dog,Pup1497,Poodle,81,Male,Small,0,75,FALSE,FALSE,./assets/dogsImages/poodle.png
+101084,Dog,Pup2368,Poodle,127,Male,Small,0,45,FALSE,FALSE,./assets/dogsImages/poodle.png
+101085,Dog,Pup3405,Poodle,167,Male,Medium,0,58,FALSE,FALSE,./assets/dogsImages/poodle.png
+101086,Dog,Maya,Poodle,126,Male,Large,1,36,FALSE,FALSE,./assets/dogsImages/poodle.png
+101087,Dog,Chiya,Poodle,84,Male,Medium,1,66,FALSE,FALSE,./assets/dogsImages/poodle.png
+101088,Dog,Pup2803,Poodle,49,Male,Medium,1,64,FALSE,FALSE,./assets/dogsImages/poodle.png
+101089,Dog,Pup2441,Poodle,112,Male,Small,0,18,FALSE,FALSE,./assets/dogsImages/poodle.png
+101090,Dog,Pup7329,Poodle,81,Male,Small,1,17,FALSE,FALSE,./assets/dogsImages/poodle.png
+101091,Dog,Pup8672,Poodle,96,Female,Large,1,60,FALSE,FALSE,./assets/dogsImages/poodle.png
+101092,Dog,Buddu,Poodle,146,Female,Small,0,64,FALSE,FALSE,./assets/dogsImages/poodle.png
+101093,Dog,Nemo,Poodle,172,Male,Large,1,36,FALSE,FALSE,./assets/dogsImages/poodle.png
+101094,Dog,Pup6035,Poodle,72,Male,Small,1,66,FALSE,FALSE,./assets/dogsImages/poodle.png

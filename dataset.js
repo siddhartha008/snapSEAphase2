@@ -10,7 +10,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 0,
       "daysInShelter": 85,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/golden.png"
     },
     {
@@ -23,7 +24,8 @@ let dogs = [
       "size": "Large",
       "vaccinated": 1,
       "daysInShelter": 4,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/golden.png"
     },
     {
@@ -36,7 +38,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 1,
       "daysInShelter": 30,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/golden.png"
     },
     {
@@ -49,7 +52,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 1,
       "daysInShelter": 1,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/golden.png"
     },
     {
@@ -62,7 +66,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 0,
       "daysInShelter": 22,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/golden.png"
     },
     {
@@ -75,7 +80,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 1,
       "daysInShelter": 63,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/golden.png"
     },
     {
@@ -88,7 +94,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 1,
       "daysInShelter": 73,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/pug.png"
     },
     {
@@ -101,7 +108,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 1,
       "daysInShelter": 30,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/pug.png"
     },
     {
@@ -114,7 +122,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 0,
       "daysInShelter": 13,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/pug.png"
     },
     {
@@ -127,7 +136,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 1,
       "daysInShelter": 84,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/pug.png"
     },
     {
@@ -140,7 +150,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 0,
       "daysInShelter": 83,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/pug.png"
     },
     {
@@ -153,7 +164,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 0,
       "daysInShelter": 40,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/pug.png"
     },
     {
@@ -166,7 +178,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 1,
       "daysInShelter": 88,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/pug.png"
     },
     {
@@ -179,7 +192,8 @@ let dogs = [
       "size": "Large",
       "vaccinated": 1,
       "daysInShelter": 5,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/husky.png"
     },
     {
@@ -192,7 +206,8 @@ let dogs = [
       "size": "Large",
       "vaccinated": 1,
       "daysInShelter": 62,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/husky.png"
     },
     {
@@ -205,7 +220,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 0,
       "daysInShelter": 18,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/husky.png"
     },
     {
@@ -218,7 +234,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 1,
       "daysInShelter": 65,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/husky.png"
     },
     {
@@ -231,7 +248,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 0,
       "daysInShelter": 19,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/husky.png"
     },
     {
@@ -244,7 +262,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 0,
       "daysInShelter": 49,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/husky.png"
     },
     {
@@ -257,7 +276,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 1,
       "daysInShelter": 81,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/husky.png"
     },
     {
@@ -270,7 +290,8 @@ let dogs = [
       "size": "Large",
       "vaccinated": 1,
       "daysInShelter": 77,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/husky.png"
     },
     {
@@ -283,7 +304,8 @@ let dogs = [
       "size": "Large",
       "vaccinated": 0,
       "daysInShelter": 37,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/husky.png"
     },
     {
@@ -296,7 +318,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 0,
       "daysInShelter": 64,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/husky.png"
     },
     {
@@ -309,7 +332,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 0,
       "daysInShelter": 50,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/husky.png"
     },
     {
@@ -322,7 +346,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 0,
       "daysInShelter": 15,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/husky.png"
     },
     {
@@ -335,7 +360,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 1,
       "daysInShelter": 53,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/husky.png"
     },
     {
@@ -348,7 +374,8 @@ let dogs = [
       "size": "Large",
       "vaccinated": 0,
       "daysInShelter": 87,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/lab.png"
     },
     {
@@ -361,7 +388,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 0,
       "daysInShelter": 6,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/lab.png"
     },
     {
@@ -374,7 +402,8 @@ let dogs = [
       "size": "Large",
       "vaccinated": 1,
       "daysInShelter": 50,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/lab.png"
     },
     {
@@ -387,7 +416,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 0,
       "daysInShelter": 79,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/lab.png"
     },
     {
@@ -400,7 +430,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 1,
       "daysInShelter": 30,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/lab.png"
     },
     {
@@ -413,7 +444,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 1,
       "daysInShelter": 7,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/lab.png"
     },
     {
@@ -426,7 +458,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 1,
       "daysInShelter": 34,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/lab.png"
     },
     {
@@ -439,7 +472,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 1,
       "daysInShelter": 39,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/lab.png"
     },
     {
@@ -452,7 +486,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 1,
       "daysInShelter": 43,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/lab.png"
     },
     {
@@ -465,7 +500,8 @@ let dogs = [
       "size": "Large",
       "vaccinated": 1,
       "daysInShelter": 86,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/lab.png"
     },
     {
@@ -478,7 +514,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 0,
       "daysInShelter": 82,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/lab.png"
     },
     {
@@ -491,7 +528,8 @@ let dogs = [
       "size": "Large",
       "vaccinated": 1,
       "daysInShelter": 88,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/lab.png"
     },
     {
@@ -504,7 +542,8 @@ let dogs = [
       "size": "Large",
       "vaccinated": 1,
       "daysInShelter": 17,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/lab.png"
     },
     {
@@ -517,7 +556,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 1,
       "daysInShelter": 51,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/lab.png"
     },
     {
@@ -530,7 +570,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 0,
       "daysInShelter": 19,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/jspitz.png"
     },
     {
@@ -543,7 +584,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 1,
       "daysInShelter": 27,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/jspitz.png"
     },
     {
@@ -556,7 +598,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 1,
       "daysInShelter": 61,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/jspitz.png"
     },
     {
@@ -569,7 +612,8 @@ let dogs = [
       "size": "Large",
       "vaccinated": 0,
       "daysInShelter": 89,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/jspitz.png"
     },
     {
@@ -582,7 +626,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 0,
       "daysInShelter": 50,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/jspitz.png"
     },
     {
@@ -595,7 +640,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 1,
       "daysInShelter": 55,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/jspitz.png"
     },
     {
@@ -608,7 +654,8 @@ let dogs = [
       "size": "Large",
       "vaccinated": 1,
       "daysInShelter": 23,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/jspitz.png"
     },
     {
@@ -621,7 +668,8 @@ let dogs = [
       "size": "Large",
       "vaccinated": 0,
       "daysInShelter": 22,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/jspitz.png"
     },
     {
@@ -634,7 +682,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 0,
       "daysInShelter": 31,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/jspitz.png"
     },
     {
@@ -647,7 +696,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 0,
       "daysInShelter": 45,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/jspitz.png"
     },
     {
@@ -660,7 +710,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 1,
       "daysInShelter": 87,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/jspitz.png"
     },
     {
@@ -673,7 +724,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 1,
       "daysInShelter": 38,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/jspitz.png"
     },
     {
@@ -686,7 +738,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 0,
       "daysInShelter": 8,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/jspitz.png"
     },
     {
@@ -699,7 +752,8 @@ let dogs = [
       "size": "Large",
       "vaccinated": 1,
       "daysInShelter": 48,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/boxer.png"
     },
     {
@@ -712,7 +766,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 1,
       "daysInShelter": 7,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/boxer.png"
     },
     {
@@ -725,7 +780,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 0,
       "daysInShelter": 21,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/boxer.png"
     },
     {
@@ -738,7 +794,8 @@ let dogs = [
       "size": "Large",
       "vaccinated": 0,
       "daysInShelter": 10,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/boxer.png"
     },
     {
@@ -751,7 +808,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 1,
       "daysInShelter": 70,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/boxer.png"
     },
     {
@@ -764,7 +822,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 1,
       "daysInShelter": 67,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/boxer.png"
     },
     {
@@ -777,7 +836,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 0,
       "daysInShelter": 40,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/boxer.png"
     },
     {
@@ -790,7 +850,8 @@ let dogs = [
       "size": "Large",
       "vaccinated": 1,
       "daysInShelter": 78,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/boxer.png"
     },
     {
@@ -803,7 +864,8 @@ let dogs = [
       "size": "Large",
       "vaccinated": 0,
       "daysInShelter": 66,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/boxer.png"
     },
     {
@@ -816,7 +878,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 1,
       "daysInShelter": 67,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/boxer.png"
     },
     {
@@ -829,7 +892,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 1,
       "daysInShelter": 89,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/boxer.png"
     },
     {
@@ -842,7 +906,8 @@ let dogs = [
       "size": "Large",
       "vaccinated": 1,
       "daysInShelter": 66,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/boxer.png"
     },
     {
@@ -855,7 +920,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 1,
       "daysInShelter": 9,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/boxer.png"
     },
     {
@@ -868,7 +934,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 1,
       "daysInShelter": 14,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/boxer.png"
     },
     {
@@ -881,7 +948,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 1,
       "daysInShelter": 24,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/boxer.png"
     },
     {
@@ -894,7 +962,8 @@ let dogs = [
       "size": "Large",
       "vaccinated": 1,
       "daysInShelter": 51,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/boxer.png"
     },
     {
@@ -907,7 +976,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 1,
       "daysInShelter": 46,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/boxer.png"
     },
     {
@@ -920,7 +990,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 1,
       "daysInShelter": 16,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/boxer.png"
     },
     {
@@ -933,7 +1004,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 1,
       "daysInShelter": 67,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/poodle.png"
     },
     {
@@ -946,7 +1018,8 @@ let dogs = [
       "size": "Large",
       "vaccinated": 0,
       "daysInShelter": 19,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/poodle.png"
     },
     {
@@ -959,7 +1032,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 0,
       "daysInShelter": 75,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/poodle.png"
     },
     {
@@ -972,7 +1046,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 0,
       "daysInShelter": 45,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/poodle.png"
     },
     {
@@ -985,7 +1060,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 0,
       "daysInShelter": 58,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/poodle.png"
     },
     {
@@ -998,7 +1074,8 @@ let dogs = [
       "size": "Large",
       "vaccinated": 1,
       "daysInShelter": 36,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/poodle.png"
     },
     {
@@ -1011,7 +1088,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 1,
       "daysInShelter": 66,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/poodle.png"
     },
     {
@@ -1024,7 +1102,8 @@ let dogs = [
       "size": "Medium",
       "vaccinated": 1,
       "daysInShelter": 64,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/poodle.png"
     },
     {
@@ -1037,7 +1116,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 0,
       "daysInShelter": 18,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/poodle.png"
     },
     {
@@ -1050,7 +1130,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 1,
       "daysInShelter": 17,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/poodle.png"
     },
     {
@@ -1063,7 +1144,8 @@ let dogs = [
       "size": "Large",
       "vaccinated": 1,
       "daysInShelter": 60,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/poodle.png"
     },
     {
@@ -1076,7 +1158,8 @@ let dogs = [
       "size": "Small",
       "vaccinated": 0,
       "daysInShelter": 64,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/poodle.png"
     },
     {
@@ -1089,7 +1172,8 @@ let dogs = [
       "size": "Large",
       "vaccinated": 1,
       "daysInShelter": 36,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/poodle.png"
     },
     {
@@ -1097,12 +1181,13 @@ let dogs = [
       "PetType": "Dog",
       "name": "Pup6035",
       "breed": "Poodle",
-      "age": 16,
+      "age": 72,
       "gender": "Male",
       "size": "Small",
       "vaccinated": 1,
       "daysInShelter": 66,
-      "isPetted": "FALSE",
+      "isAdopted": false,
+      "isPetted": false,
       "image": "./assets/dogsImages/poodle.png"
     }
   ]
@@ -1117,3 +1202,5 @@ dogs.sort(
     }
   )
 }
+
+
