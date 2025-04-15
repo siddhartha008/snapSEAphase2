@@ -209,6 +209,12 @@ function applyFilters() {
 
   const minAgeFromHTML = document.querySelector('.minAge').value;
   const maxAgeFromHTML = document.querySelector('.maxAge').value;
+
+  if ((minAgeFromHTML === "" && maxAgeFromHTML !== "") || (minAgeFromHTML !== "" && maxAgeFromHTML === "")) {
+    alert("Please enter both a minimum and a maximum age, or leave both empty.");
+    return;
+  }
+
   if(isNaN(minAgeFromHTML) || isNaN(maxAgeFromHTML) || minAgeFromHTML < 0 || maxAgeFromHTML > 14 || minAgeFromHTML > 14 || maxAgeFromHTML < 0 || minAgeFromHTML > maxAgeFromHTML) {
     alert("Input Error in Age Range. Make sure the minimum age is at least 0 and the maximum age(at most 14) is greater than minimum age.");
     return;
